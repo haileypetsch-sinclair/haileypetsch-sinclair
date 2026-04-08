@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hailey Sinclair | Mechanical Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fdfcfb;
+            --text-main: #2d2d2d;
+            --text-sub: #666;
+            --accent: #8c7851; /* Subtle walnut-inspired tone */
+            --border: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 0 20px;
+        }
+
+        header {
+            max-width: 800px;
+            margin: 80px auto 40px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-sub);
+            font-weight: 300;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+            margin-bottom: 24px;
+        }
+
+        .entry {
+            margin-bottom: 32px;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .entry-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .entry-date {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+        }
+
+        .entry-org {
+            font-style: italic;
+            color: var(--text-sub);
+            margin-bottom: 8px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+        }
+
+        .skill-item {
+            font-size: 0.95rem;
+        }
+
+        footer {
+            max-width: 800px;
+            margin: 80px auto 40px;
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .entry-header {
+                flex-direction: column;
+            }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Hailey Sinclair</h1>
+        <p class="subtitle">Mechanical Engineer & Project Lead</p>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>About</h2>
+            <p>Mechanical Engineer with a specialization in vehicle dynamics and strategic project management. Focused on the intersection of technical excellence, leadership theory, and the future of automotive engineering.</p>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Large Project Lead & Test Engineer</span>
+                    <span class="entry-date">2023 – Present</span>
+                </div>
+                <div class="entry-org">Research and Development Center</div>
+                <ul>
+                    <li>Leading cross-functional teams in vehicle dynamics testing and optimization.</li>
+                    <li>Managing large-scale engineering projects from conceptual strategy through technical execution.</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Design Review Board Member</span>
+                    <span class="entry-date">2025 – Present</span>
+                </div>
+                <div class="entry-org">Municipal Service</div>
+                <ul>
+                    <li>Evaluating architectural and design proposals to ensure compliance with community standards and contemporary aesthetics.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">BS, Mechanical Engineering</span>
+                    <span class="entry-date">Arizona State University</span>
+                </div>
+            </div>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Strategic Leadership & Negotiation Coursework</span>
+                    <span class="entry-date">Fisher College of Business, OSU</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Technical & Strategic Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-item">Vehicle Dynamics</div>
+                <div class="skill-item">Machine Design</div>
+                <div class="skill-item">Strategic Planning</div>
+                <div class="skill-item">Vibration Analysis</div>
+                <div class="skill-item">Leadership Theory</div>
+                <div class="skill-item">Suspension Tuning</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2026 Hailey Sinclair. Built with a focus on minimalist utility.
+    </footer>
+
+</body>
+</html>
