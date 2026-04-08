@@ -6,31 +6,38 @@
     <title>Hailey Sinclair | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
+        /* 1. Reset & Variables */
         :root {
             --bg: #f1ede5;
             --teal: #009688;
-            --orange: #d76c3e;
             --dark: #1a1a1a;
             --white: #ffffff;
+        }
+
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
         }
 
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: var(--bg);
-            margin: 0;
+            color: var(--dark);
             display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
+            padding: 20px;
         }
 
+        /* 2. Header */
         header {
             width: 100%;
-            max-width: 1100px;
+            max-width: 800px;
+            padding: 20px 0 40px 0;
             display: flex;
-            justify-content: space-between;
-            padding: 40px 20px;
-            align-items: center;
+            justify-content: flex-start;
         }
 
         .logo { 
@@ -45,18 +52,17 @@
             font-weight: 400; 
         }
 
-        /* Hero Card with Rounded Corners */
+        /* 3. Hero Card (Rounded) */
         .hero-card {
             background: var(--white);
             border: 2px solid var(--dark);
-            width: 90%;
+            width: 100%;
             max-width: 800px;
-            margin-top: 20px;
             box-shadow: 12px 12px 0px var(--dark);
+            border-radius: 24px;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
-            border-radius: 24px; /* Rounded corners */
-            overflow: hidden;    /* Prevents header color from bleeding out */
         }
 
         .card-header {
@@ -65,19 +71,18 @@
             padding: 15px 30px;
             border-bottom: 2px solid var(--dark);
             font-weight: 700;
+            text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .card-content {
-            display: flex;
             padding: 50px;
-            gap: 30px;
         }
 
         .bio h1 { 
             font-size: 3.2rem; 
             line-height: 0.9; 
-            margin: 0 0 15px 0; 
+            margin-bottom: 20px; 
             text-transform: uppercase; 
             font-weight: 800;
         }
@@ -86,26 +91,85 @@
             color: #555; 
             line-height: 1.6; 
             font-size: 1.1rem;
+            margin-bottom: 15px;
         }
 
-        /* Grid - Forced to one line on desktop */
+        /* 4. The 4-Box Grid (Single Line) */
         .grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr); 
-            gap: 20px;
-            width: 90%;
+            gap: 15px;
+            width: 100%;
             max-width: 800px;
-            margin: 40px 0 80px 0;
+            margin-top: 40px;
+            margin-bottom: 60px;
         }
 
-        /* Buttons with Rounded Corners */
         .block-btn {
             background: var(--white);
             border: 2px solid var(--dark);
-            padding: 20px 10px;
+            padding: 18px 5px;
             text-align: center;
             font-weight: 800;
             text-decoration: none;
             color: var(--dark);
-            box-shadow: 8px 8px 0px var(--dark);
-            transition: all 0.2s ease;
+            box-shadow: 6px 6px 0px var(--dark);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: transform 0.1s ease;
+        }
+
+        .block-btn:hover { 
+            transform: translate(2px, 2px); 
+            box-shadow: 3px 3px 0px var(--dark); 
+        }
+
+        .teal-btn { 
+            background: var(--teal); 
+            color: white; 
+        }
+
+        /* 5. Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: repeat(2, 1fr); }
+            .bio h1 { font-size: 2.5rem; }
+        }
+
+        @media (max-width: 480px) {
+            .grid { grid-template-columns: 1fr; }
+            .card-content { padding: 30px; }
+            .bio h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">HAILEY<span>SINCLAIR</span></div>
+    </header>
+
+    <div class="hero-card">
+        <div class="card-header">HELLO.</div>
+        <div class="card-content">
+            <div class="bio">
+                <h1>Hailey<br><span style="color:var(--teal)">Sinclair</span></h1>
+                <p><strong>Mechanical Engineer | Project Lead | Design Strategist</strong></p>
+                <p>Specializing in vehicle dynamics and strategic planning within advanced R&D environments. Bridging the gap between technical execution and holistic leadership.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid">
+        <a href="mailto:your-email@example.com" class="block-btn teal-btn">GET IN TOUCH</a>
+        <a href="#" class="block-btn">EXPERIENCE</a>
+        <a href="#" class="block-btn">RESUME</a>
+        <a href="https://linkedin.com/in/haileysinclair" target="_blank" class="block-btn">LINKEDIN</a>
+    </div>
+
+</body>
+</html>
