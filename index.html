@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hailey Sinclair | Mechanical Engineer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Hailey Sinclair</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #fdfcfb;
-            --text-main: #2d2d2d;
-            --text-sub: #666;
-            --accent: #8c7851; /* Subtle walnut-inspired tone */
-            --border: #e0e0e0;
+            --bg-color: #f7f5f2; /* Soft beige */
+            --text-main: #2b2b2b;
+            --text-muted: #737373;
+            --accent: #6b5035; /* Walnut */
+            --border: #dfdcd8;
         }
 
         * {
@@ -24,191 +24,242 @@
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
-            line-height: 1.6;
-            padding: 0 20px;
+            line-height: 1.7;
+            display: flex;
+            min-height: 100vh;
         }
 
-        header {
-            max-width: 800px;
-            margin: 80px auto 40px;
+        /* Layout */
+        .layout-wrapper {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Sticky Sidebar */
+        aside {
+            width: 35%;
+            padding: 80px 40px;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
             font-weight: 600;
             letter-spacing: -1px;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            color: var(--accent);
         }
 
-        .subtitle {
+        .tagline {
             font-size: 1.1rem;
-            color: var(--text-sub);
+            color: var(--text-muted);
+            margin-bottom: 40px;
             font-weight: 300;
         }
 
+        nav a {
+            display: block;
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Main Content */
         main {
-            max-width: 800px;
-            margin: 0 auto;
+            width: 65%;
+            padding: 80px 40px;
         }
 
         section {
-            margin-bottom: 60px;
+            margin-bottom: 100px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         h2 {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--accent);
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 30px;
             border-bottom: 1px solid var(--border);
-            padding-bottom: 8px;
-            margin-bottom: 24px;
+            padding-bottom: 10px;
         }
 
-        .entry {
-            margin-bottom: 32px;
+        .card {
+            background: #ffffff;
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .entry-header {
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .card-header {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 4px;
+            align-items: center;
+            margin-bottom: 15px;
         }
 
-        .entry-title {
-            font-weight: 600;
-            font-size: 1.1rem;
+        .card-title {
+            font-weight: 500;
+            font-size: 1.2rem;
         }
 
-        .entry-date {
-            font-size: 0.9rem;
-            color: var(--text-sub);
-        }
-
-        .entry-org {
-            font-style: italic;
-            color: var(--text-sub);
-            margin-bottom: 8px;
-        }
-
-        ul {
-            list-style-type: none;
-        }
-
-        li {
-            margin-bottom: 8px;
-            position: relative;
-            padding-left: 15px;
-        }
-
-        li::before {
-            content: "—";
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 16px;
-        }
-
-        .skill-item {
-            font-size: 0.95rem;
-        }
-
-        footer {
-            max-width: 800px;
-            margin: 80px auto 40px;
-            border-top: 1px solid var(--border);
-            padding-top: 20px;
+        .card-date {
             font-size: 0.85rem;
-            color: var(--text-sub);
-            text-align: center;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        @media (max-width: 600px) {
-            .entry-header {
+        .tags {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            background: var(--bg-color);
+            color: var(--accent);
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 900px) {
+            .layout-wrapper {
                 flex-direction: column;
             }
-            h1 { font-size: 2rem; }
+            aside {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 40px 20px 0;
+            }
+            main {
+                width: 100%;
+                padding: 40px 20px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Hailey Sinclair</h1>
-        <p class="subtitle">Mechanical Engineer & Project Lead</p>
-    </header>
+    <div class="layout-wrapper">
+        <aside>
+            <div>
+                <h1>Hailey Sinclair</h1>
+                <p class="tagline">Mechanical Engineer & Strategist</p>
+                <nav>
+                    <a href="#about">About</a>
+                    <a href="#engineering">Engineering</a>
+                    <a href="#writing">Writing</a>
+                </nav>
+            </div>
+        </aside>
 
-    <main>
-        <section id="about">
-            <h2>About</h2>
-            <p>Mechanical Engineer with a specialization in vehicle dynamics and strategic project management. Focused on the intersection of technical excellence, leadership theory, and the future of automotive engineering.</p>
-        </section>
+        <main>
+            <section id="about" class="fade-in">
+                <h2>Overview</h2>
+                <p>Focused on the intersection of vehicle dynamics, technical execution, and holistic leadership. Currently serving as a Large Project Lead at a leading Research and Development Center, while exploring the broader aesthetic of functional design and strategic planning.</p>
+            </section>
 
-        <section id="experience">
-            <h2>Experience</h2>
-            
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">Large Project Lead & Test Engineer</span>
-                    <span class="entry-date">2023 – Present</span>
+            <section id="engineering" class="fade-in">
+                <h2>Engineering & Strategy</h2>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">Vehicle Dynamics Test Engineer</span>
+                        <span class="card-date">2023 – Present</span>
+                    </div>
+                    <p>Directing cross-functional teams and managing large-scale automotive projects from concept to final execution. Specializing in suspension tuning, vibration analysis, and systemic critical frequency evaluation.</p>
+                    <div class="tags">
+                        <span class="tag">Project Leadership</span>
+                        <span class="tag">Dynamics</span>
+                        <span class="tag">R&D</span>
+                    </div>
                 </div>
-                <div class="entry-org">Research and Development Center</div>
-                <ul>
-                    <li>Leading cross-functional teams in vehicle dynamics testing and optimization.</li>
-                    <li>Managing large-scale engineering projects from conceptual strategy through technical execution.</li>
-                </ul>
-            </div>
 
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">Design Review Board Member</span>
-                    <span class="entry-date">2025 – Present</span>
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">Design Review Board</span>
+                        <span class="card-date">2025 – Present</span>
+                    </div>
+                    <p>Municipal appointment evaluating civic and architectural design proposals to ensure compliance with community standards and contemporary design philosophies.</p>
+                    <div class="tags">
+                        <span class="tag">Civic Service</span>
+                        <span class="tag">Design Aesthetics</span>
+                    </div>
                 </div>
-                <div class="entry-org">Municipal Service</div>
-                <ul>
-                    <li>Evaluating architectural and design proposals to ensure compliance with community standards and contemporary aesthetics.</li>
-                </ul>
-            </div>
-        </section>
+            </section>
 
-        <section id="education">
-            <h2>Education</h2>
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">BS, Mechanical Engineering</span>
-                    <span class="entry-date">Arizona State University</span>
+            <section id="writing" class="fade-in">
+                <h2>Perspectives</h2>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">Substack Series</span>
+                        <span class="card-date">Weekly</span>
+                    </div>
+                    <p>Exploring career growth, the application of leadership principles in highly technical environments, and the philosophy of holistic living.</p>
+                    <div class="tags">
+                        <span class="tag">Strategy</span>
+                        <span class="tag">Leadership</span>
+                    </div>
                 </div>
-            </div>
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">Strategic Leadership & Negotiation Coursework</span>
-                    <span class="entry-date">Fisher College of Business, OSU</span>
-                </div>
-            </div>
-        </section>
+            </section>
+        </main>
+    </div>
 
-        <section id="skills">
-            <h2>Technical & Strategic Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-item">Vehicle Dynamics</div>
-                <div class="skill-item">Machine Design</div>
-                <div class="skill-item">Strategic Planning</div>
-                <div class="skill-item">Vibration Analysis</div>
-                <div class="skill-item">Leadership Theory</div>
-                <div class="skill-item">Suspension Tuning</div>
-            </div>
-        </section>
-    </main>
+    <script>
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
 
-    <footer>
-        &copy; 2026 Hailey Sinclair. Built with a focus on minimalist utility.
-    </footer>
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
 
+        document.querySelectorAll('.fade-in').forEach((section) => {
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
