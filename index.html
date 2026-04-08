@@ -3,229 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hailey Sinclair | Mechanical Engineer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <title>Hailey Sinclair | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Visual color variables based on the reference image */
-            --bg-color: #f1ede5; /* Soft beige */
-            --teal-accent: #009688; /* Primary teal/green */
-            --orange-accent: #d76c3e; /* Secondary burnt orange */
-            --text-main: #2d2d2d;
-            --text-light: #666;
+            --bg: #f1ede5;
+            --teal: #009688;
+            --orange: #d76c3e;
+            --dark: #1a1a1a;
             --white: #ffffff;
-            --button-shadow: #1a1a1a;
         }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
+            background-color: var(--bg);
+            margin: 0;
             display: flex;
             flex-direction: column;
+            align-items: center;
             min-height: 100vh;
         }
-
-        /* 1. Header & Navigation */
         header {
-            max-width: 1300px;
-            margin: 20px auto 40px;
-            padding: 0 40px;
+            width: 100%;
+            max-width: 1100px;
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            width: 100%;
-        }
-
-        .logo {
-            font-weight: 800;
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .logo span {
-            font-weight: 300;
-            color: var(--teal-accent);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text-main);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.85rem;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: var(--teal-accent);
-        }
-
-        .top-btns {
-            display: flex;
-            gap: 15px;
-        }
-
-        /* 2. Primary Action Buttons */
-        .btn {
-            font-family: 'Montserrat', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            padding: 12px 24px;
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            position: relative;
-        }
-
-        .btn:hover {
-            transform: translate(2px, 2px);
-            box-shadow: none;
-        }
-
-        /* Top Orange and Teal Buttons */
-        .btn-orange-top {
-            background-color: var(--orange-accent);
-            color: var(--white);
-        }
-
-        .btn-teal-top {
-            background-color: var(--teal-accent);
-            color: var(--white);
-        }
-
-        /* 3. Hero Card */
-        main {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 0 40px;
-            flex-grow: 1;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
+            padding: 40px 20px;
             align-items: center;
         }
+        .logo { font-weight: 800; font-size: 1.2rem; letter-spacing: 2px; }
+        .logo span { color: var(--teal); font-weight: 400; }
 
         .hero-card {
-            background-color: var(--white);
-            border: 1px solid #1a1a1a;
-            width: 100%;
+            background: var(--white);
+            border: 2px solid var(--dark);
+            width: 90%;
             max-width: 800px;
-            border-radius: 4px;
-            overflow: hidden;
-            display: flex;
-            margin-bottom: 60px;
-            /* Heavy characteristic shadow */
-            box-shadow: 12px 12px 0px 0px rgba(26,26,26,1);
-        }
-
-        .card-inner {
-            display: flex;
-            width: 100%;
-        }
-
-        .card-teal-bar {
-            background-color: var(--teal-accent);
-            padding: 30px;
-            color: var(--white);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            width: 100%;
-            border-bottom: 1px solid #1a1a1a;
-        }
-
-        .card-teal-bar h2 {
-            font-size: 1.8rem;
-        }
-
-        .card-body-section {
-            width: 100%;
+            margin-top: 20px;
+            box-shadow: 12px 12px 0px var(--dark);
             display: flex;
             flex-direction: column;
         }
-
+        .card-header {
+            background: var(--teal);
+            color: white;
+            padding: 15px 30px;
+            border-bottom: 2px solid var(--dark);
+            font-weight: 700;
+        }
         .card-content {
             display: flex;
-            padding: 60px;
-            gap: 50px;
-            align-items: center;
+            padding: 40px;
+            gap: 30px;
         }
+        .bio h1 { font-size: 3rem; line-height: 0.9; margin: 0 0 15px 0; text-transform: uppercase; }
+        .bio p { color: #666; line-height: 1.6; }
 
-        .profile-pic {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 5px solid #1a1a1a;
-            flex-shrink: 0;
-        }
-
-        .profile-pic img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .bio-section {
-            flex-grow: 1;
-        }
-
-        .bio-section h1 {
-            font-weight: 800;
-            font-size: 3.2rem;
-            text-transform: uppercase;
-            line-height: 0.9;
-            margin-bottom: 20px;
-        }
-
-        .bio-section h1 span {
-            display: block;
-            color: var(--teal-accent);
-            font-weight: 400;
-        }
-
-        .bio-section p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        /* 4. Lower Button Grid */
-        .btn-grid {
-            width: 100%;
-            max-width: 800px;
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
-            margin-bottom: 80px;
+            width: 90%;
+            max-width: 800px;
+            margin: 40px 0;
         }
-
-        /* Shared style for all four lower buttons */
-        .btn-main {
-            font-family: 'Montserrat', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.85rem;
+        .block-btn {
+            background: var(--white);
+            border: 2px solid var(--dark);
+            padding: 20px;
+            text-align: center;
             font-weight: 800;
-            padding: 16px 20px;
             text-decoration: none;
-            display: flex
+            color: var(--dark);
+            box-shadow: 8px 8px 0px var(--dark);
+            transition: 0.2s;
+        }
+        .block-btn:hover { transform: translate(2px, 2px); box-shadow: 4px 4px 0px var(--dark); }
+        .teal-btn { background: var(--teal); color: white; }
+
+        @media (max-width: 600px) {
+            .card-content { flex-direction: column; text-align: center; }
+            .bio h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">HAILEY<span>SINCLAIR</span></div>
+    </header>
+
+    <div class="hero-card">
+        <div class="card-header">HELLO.</div>
+        <div class="card-content">
+            <div class="bio">
+                <h1>Hailey<br><span style="color:var(--teal)">Sinclair</span></h1>
+                <p>Mechanical Engineer | Project Lead | Design Strategist</p>
+                <p>Focused on vehicle dynamics and strategic planning at a top R&D center.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid">
+        <a href="#" class="block-btn teal-btn">GET IN TOUCH</a>
+        <a href="#" class="block-btn">EXPERIENCE</a>
+        <a href="#" class="block-btn">RESUME</a>
+        <a href="#" class="block-btn">LINKEDIN</a>
+    </div>
+
+</body>
+</html>
