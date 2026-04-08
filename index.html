@@ -1,175 +1,757 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hailey Sinclair | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
-    <style>
-        /* 1. Reset & Variables */
-        :root {
-            --bg: #f1ede5;
-            --teal: #009688;
-            --dark: #1a1a1a;
-            --white: #ffffff;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hailey Petsch-Sinclair | Automotive Engineer and Strategist </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-        }
+    :root {
+      --bg:        #F0EDE5;
+      --bg2:       #E5E0D6;
+      --card:      #FEFCF8;
+      --accent:    #0D9488;
+      --accent-dk: #0A7470;
+      --accent2:   #E85D26;
+      --accent2-dk:#C44D1F;
+      --black:     #111111;
+      --text:      #111111;
+      --muted:     #5A5852;
+      --border:    3px solid #111111;
+      --radius:    16px;
+      --shadow:    5px 5px 0 #111111;
+      --shadow-lg: 8px 8px 0 #111111;
+    }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg);
-            color: var(--dark);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-        /* 2. Header */
-        header {
-            width: 100%;
-            max-width: 800px;
-            padding: 20px 0 40px 0;
-            display: flex;
-            justify-content: flex-start;
-        }
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0.9rem 5%;
+      background: var(--card);
+      border-bottom: var(--border);
+    }
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem; letter-spacing: 3px;
+      color: var(--text); text-decoration: none;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      color: var(--text); text-decoration: none;
+      font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-ctas { display: flex; gap: 0.6rem; align-items: center; }
+    .nav-cta {
+      background: var(--accent); color: #fff;
+      padding: 0.5rem 1.2rem;
+      border: var(--border); border-radius: 8px;
+      font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none;
+      box-shadow: 3px 3px 0 var(--black);
+      transition: all 0.15s;
+    }
+    .nav-cta:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 var(--black); }
+    .nav-cta-li {
+      background: var(--accent2); color: #fff;
+      padding: 0.5rem 1.2rem;
+      border: var(--border); border-radius: 8px;
+      font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none;
+      box-shadow: 3px 3px 0 var(--black);
+      transition: all 0.15s;
+    }
+    .nav-cta-li:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 var(--black); }
 
-        .logo { 
-            font-weight: 800; 
-            font-size: 1.2rem; 
-            letter-spacing: 2px; 
-            text-transform: uppercase;
-        }
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 8rem 5% 5rem;
+      background: var(--bg);
+    }
+    .hero-wrapper {
+      max-width: 720px; width: 100%;
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .hero-card {
+      width: 100%;
+      border: var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .hero-card-top {
+      background: var(--accent);
+      padding: 1.5rem 2.5rem 1.25rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .hero-hello {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.8rem; letter-spacing: 4px;
+      color: rgba(255,255,255,0.95); line-height: 1;
+    }
+    .hero-role-tag {
+      background: rgba(0,0,0,0.2);
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 8px;
+      padding: 0.4rem 1rem;
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+    }
+    .hero-card-body {
+      background: var(--card);
+      padding: 2.5rem 2.5rem 2rem;
+      display: flex; align-items: center; gap: 2.5rem;
+    }
+    .hero-photo {
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      border: var(--border);
+      box-shadow: 4px 4px 0 var(--black);
+      object-fit: cover; object-position: center 15%;
+      flex-shrink: 0;
+    }
+    .hero-text { flex: 1; }
+    h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.5rem, 10vw, 6rem);
+      letter-spacing: 4px; line-height: 0.88;
+      color: var(--text);
+    }
+    h1 span { color: var(--accent); }
+    .hero-tagline {
+      font-size: 0.9rem; color: var(--muted);
+      margin-top: 0.8rem; line-height: 1.7; max-width: 360px;
+    }
+    .hero-btns {
+      display: flex; gap: 0.75rem; flex-wrap: wrap;
+      justify-content: center; margin-top: 2rem;
+    }
+    .btn {
+      padding: 0.8rem 1.6rem;
+      border: var(--border); border-radius: 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700; font-size: 0.8rem;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      text-decoration: none;
+      box-shadow: 4px 4px 0 var(--black);
+      transition: all 0.15s;
+      display: inline-flex; align-items: center; gap: 0.4rem;
+    }
+    .btn:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 var(--black); }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-white   { background: var(--card); color: var(--text); }
 
-        .logo span { 
-            color: var(--teal); 
-            font-weight: 400; 
-        }
+    /* ── SHARED ── */
+    .max-w { max-width: 1100px; margin: 0 auto; }
+    .section-heading {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 7vw, 5rem);
+      letter-spacing: 4px; line-height: 0.9;
+      margin-bottom: 2rem;
+    }
+    .section-heading.light  { color: #fff; }
+    .section-heading.dark   { color: var(--text); }
+    .section-heading.orange { color: #fff; }
+    .section-intro { color: var(--muted); max-width: 540px; margin-bottom: 2.5rem; font-size: 0.95rem; }
+    .section-intro.light { color: rgba(255,255,255,0.75); }
 
-        /* 3. Hero Card (Rounded) */
-        .hero-card {
-            background: var(--white);
-            border: 2px solid var(--dark);
-            width: 100%;
-            max-width: 800px;
-            box-shadow: 12px 12px 0px var(--dark);
-            border-radius: 24px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
+    /* ── ABOUT ── */
+    #about { background: var(--accent); padding: 6rem 5%; }
+    .about-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2.5rem; align-items: start; }
+    .card {
+      background: var(--card);
+      border: var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .card-body { padding: 2rem; }
+    .about-text p { color: var(--muted); margin-bottom: 0.9rem; line-height: 1.8; font-size: 0.93rem; }
+    .about-text p strong { color: var(--text); }
+    .about-facts { display: flex; flex-direction: column; gap: 0.7rem; margin-top: 1.25rem; }
+    .fact { display: flex; align-items: center; gap: 0.75rem; color: var(--muted); font-size: 0.86rem; }
+    .fact-icon {
+      width: 32px; height: 32px; border-radius: 8px;
+      background: var(--bg); border: 2px solid var(--black);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; flex-shrink: 0;
+    }
+    .highlights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .hcard {
+      background: var(--card); border: var(--border);
+      border-radius: var(--radius); padding: 1.4rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .hcard:hover { transform: translate(-3px,-3px); box-shadow: 8px 8px 0 var(--black); }
+    .hcard .icon { font-size: 1.4rem; margin-bottom: 0.4rem; }
+    .hcard h4 { font-size: 0.86rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .hcard p  { font-size: 0.77rem; color: var(--muted); line-height: 1.5; }
 
-        .card-header {
-            background: var(--teal);
-            color: white;
-            padding: 15px 30px;
-            border-bottom: 2px solid var(--dark);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+    /* ── EXPERIENCE ── */
+    #experience { background: var(--bg); padding: 6rem 5%; }
+    .tl-item {
+      background: var(--card);
+      border: var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem 2rem;
+      margin-bottom: 1.25rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .tl-item:hover { transform: translate(-3px,-3px); box-shadow: 8px 8px 0 var(--black); }
+    .tl-company {
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 0.2rem;
+    }
+    .tl-role { font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 0.2rem; }
+    .tl-meta { font-size: 0.78rem; color: var(--muted); margin-bottom: 0.75rem; }
+    .tl-bullets { list-style: none; }
+    .tl-bullets li {
+      position: relative; padding-left: 1.2rem;
+      color: var(--muted); font-size: 0.88rem;
+      margin-bottom: 0.45rem; line-height: 1.65;
+    }
+    .tl-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.7rem; top: 4px; }
 
-        .card-content {
-            padding: 50px;
-        }
+    /* ── SKILLS ── */
+    #skills { background: var(--bg2); padding: 6rem 5%; }
+    .skills-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.2rem; }
+    .sk-card {
+      background: #F5BC4B; border: var(--border);
+      border-radius: var(--radius); padding: 1.5rem 1rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.15s, box-shadow 0.15s;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      aspect-ratio: 1; text-align: center;
+    }
+    .sk-card:hover { transform: translate(-3px,-3px); box-shadow: 8px 8px 0 var(--black); }
+    .sk-card svg { width: 64px; height: 64px; margin-bottom: 0.9rem; }
+    .sk-name  { font-weight: 700; font-size: 0.88rem; color: var(--black); }
 
-        .bio h1 { 
-            font-size: 3.2rem; 
-            line-height: 0.9; 
-            margin-bottom: 20px; 
-            text-transform: uppercase; 
-            font-weight: 800;
-        }
+    /* ── INTERESTS (carousel) ── */
+    #interests { background: var(--accent2); padding: 5rem 0 4rem; overflow: hidden; }
+    #interests .max-w { max-width: 1100px; margin: 0 auto; padding: 0 5%; }
+    .carousel-viewport {
+      overflow: hidden;
+      padding: 1rem 0 2rem;
+      cursor: grab;
+      user-select: none;
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+      mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+    }
+    .carousel-viewport:active { cursor: grabbing; }
+    .int-track {
+      display: flex; gap: 1.4rem;
+      width: max-content;
+      animation: scroll-carousel 30s linear infinite;
+      will-change: transform;
+    }
+    .int-track:hover { animation-play-state: paused; }
+    .int-track.dragging { animation: none; }
+    .int-card {
+      flex: 0 0 320px; height: 400px;
+      border: var(--border);
+      border-radius: var(--radius); overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.4s cubic-bezier(.25,.8,.25,1), box-shadow 0.4s cubic-bezier(.25,.8,.25,1);
+    }
+    .int-card:hover {
+      transform: scale(1.05) translateY(-6px);
+      box-shadow: 10px 14px 0 var(--black);
+      z-index: 2;
+    }
+    .int-card img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.5s ease;
+    }
+    .int-card:hover img { transform: scale(1.08); }
+    @keyframes scroll-carousel {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
 
-        .bio p { 
-            color: #555; 
-            line-height: 1.6; 
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-        }
+    /* ── CONTACT ── */
+    #contact { background: var(--black); padding: 6rem 5%; }
+    #contact .section-heading { color: #fff; }
+    .contact-sub { color: rgba(255,255,255,0.45); margin-bottom: 3rem; font-size: 0.93rem; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 2.5rem; align-items: start; }
+    .contact-info-card {
+      background: var(--card); border: var(--border);
+      border-radius: var(--radius); padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+    .contact-info-card h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem; letter-spacing: 3px;
+      margin-bottom: 0.5rem; color: var(--text);
+    }
+    .contact-info-card > p { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.5rem; line-height: 1.7; }
+    .clink {
+      display: flex; align-items: center; gap: 0.75rem;
+      color: var(--muted); text-decoration: none; font-size: 0.88rem;
+      padding: 0.7rem 0; border-bottom: 2px solid var(--bg2);
+      transition: color 0.2s;
+    }
+    .clink:last-child { border-bottom: none; }
+    .clink:hover { color: var(--accent); }
+    .cl-icon {
+      width: 32px; height: 32px; border-radius: 8px;
+      background: var(--bg); border: 2px solid var(--black);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; flex-shrink: 0;
+    }
+    .contact-form-wrap {
+      background: var(--card); border: var(--border);
+      border-radius: var(--radius); padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+    .cform { display: flex; flex-direction: column; gap: 1rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.35rem; }
+    .form-group label {
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted);
+    }
+    .form-group input, .form-group textarea {
+      background: var(--bg); border: 2px solid var(--black);
+      color: var(--text); padding: 0.7rem 0.9rem; border-radius: 8px;
+      font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
+      outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: #aaa; }
+    .form-group input:focus, .form-group textarea:focus {
+      border-color: var(--accent); box-shadow: 3px 3px 0 var(--accent);
+    }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-submit {
+      background: var(--accent); color: #fff;
+      border: var(--border); border-radius: 10px;
+      padding: 0.85rem; font-weight: 700;
+      font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase;
+      cursor: pointer; font-family: 'DM Sans', sans-serif;
+      box-shadow: 4px 4px 0 var(--black);
+      transition: all 0.15s; width: 100%;
+    }
+    .form-submit:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 var(--black); }
 
-        /* 4. The 4-Box Grid (Single Line) */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr); 
-            gap: 15px;
-            width: 100%;
-            max-width: 800px;
-            margin-top: 40px;
-            margin-bottom: 60px;
-        }
+    /* ── FOOTER ── */
+    footer {
+      background: #0a0a0a; border-top: var(--border);
+      padding: 1.75rem 5%; text-align: center;
+      color: rgba(255,255,255,0.35); font-size: 0.82rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
 
-        .block-btn {
-            background: var(--white);
-            border: 2px solid var(--dark);
-            padding: 18px 5px;
-            text-align: center;
-            font-weight: 800;
-            text-decoration: none;
-            color: var(--dark);
-            box-shadow: 6px 6px 0px var(--dark);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: transform 0.1s ease;
-        }
-
-        .block-btn:hover { 
-            transform: translate(2px, 2px); 
-            box-shadow: 3px 3px 0px var(--dark); 
-        }
-
-        .teal-btn { 
-            background: var(--teal); 
-            color: white; 
-        }
-
-        /* 5. Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .grid { grid-template-columns: repeat(2, 1fr); }
-            .bio h1 { font-size: 2.5rem; }
-        }
-
-        @media (max-width: 480px) {
-            .grid { grid-template-columns: 1fr; }
-            .card-content { padding: 30px; }
-            .bio h1 { font-size: 2rem; }
-        }
-    </style>
+    /* ── RESPONSIVE ── */
+    @media (max-width: 820px) {
+      .hero-card-body { flex-direction: column; text-align: center; gap: 1.5rem; padding: 2rem 1.5rem; }
+      .hero-card-top { padding: 1.25rem 1.5rem; flex-wrap: wrap; gap: 0.75rem; }
+      .hero-tagline { margin: 0.75rem auto 0; }
+      .about-grid { grid-template-columns: 1fr; }
+      .highlights-grid { grid-template-columns: 1fr 1fr; }
+      .skills-grid { grid-template-columns: repeat(3, 1fr); }
+      .int-card { flex: 0 0 270px; height: 340px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      nav .nav-links { display: none; }
+      .hero-btns { margin-top: 1.5rem; }
+    }
+    @media (max-width: 500px) {
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .int-card { flex: 0 0 240px; height: 300px; }
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">HAILEY<span>SINCLAIR</span></div>
-    </header>
+<nav>
+  <a class="nav-logo" href="#hero">Hailey <span>Petsch-Sinclair</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-ctas">
+    <a class="nav-cta-li" href="https://www.linkedin.com/in/Hailey-Petsch" target="_blank">LinkedIn ↗</a>
+    <a class="nav-cta" href="Hailey_Petsch-Sinclair_Resume.pdf" download>⬇ Resume</a>
+  </div>
+</nav>
 
+<!-- Hero -->
+<section id="hero">
+  <div class="hero-wrapper">
     <div class="hero-card">
-        <div class="card-header">HELLO.</div>
-        <div class="card-content">
-            <div class="bio">
-                <h1>Hailey<br><span style="color:var(--teal)">Sinclair</span></h1>
-                <p><strong>Mechanical Engineer | Project Lead | Design Strategist</strong></p>
-                <p>Specializing in vehicle dynamics and strategic planning within advanced R&D environments. Bridging the gap between technical execution and holistic leadership.</p>
-            </div>
+      <div class="hero-card-top">
+        <div class="hero-hello">Hello.</div>
+      </div>
+      <div class="hero-card-body">
+        <img class="hero-photo" src="Colin.JPG" alt="Colin Ormsby" />
+        <div class="hero-text">
+          <h1>Hailey<br /><span>Petsch-Sinclair</span></h1>
+          <p class="hero-tagline">Engineering and Strategic Analyst at Honda R&D America &amp; — Developing complex ideas into clear, confident future prospects.</p>
         </div>
+      </div>
+    </div>
+    <div class="hero-btns">
+      <a class="btn btn-primary" href="#contact">Get in Touch</a>
+      <a class="btn btn-white" href="#experience">View Experience</a>
+      <a class="btn btn-white" href="Hailey_Petsch-Sinclair_Resume.pdf" download>⬇ Resume</a>
+      <a class="btn btn-white" href="https://www.linkedin.com/in/Hailey-Petsch" target="_blank">LinkedIn ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about">
+  <div class="max-w">
+    <div class="section-heading light">ABOUT ME</div>
+    <div class="about-grid">
+      <div class="card">
+        <div class="card-body about-text">
+          <p>I'm a <strong> Financial Analyst</strong> based in Greensboro, NC, currently at Honda Aircraft Company. My career has taken me across multiple divisions of Honda — from automotive trade policy in Ohio to new model budgeting in Alabama — and internationally to Singapore.</p>
+          <p>I specialize in <strong>FP&amp;A, variance analysis, month-end close, and financial reporting</strong>. I bring a mix of GAAP rigor, strong SAP expertise, and a growing toolkit in data visualization through Tableau and Power BI.</p>
+          <p>I'm actively expanding my skill set in <strong>SQL and data analytics</strong>, focusing on the intersection of finance, strategy, and automation.</p>
+          <div class="about-facts">
+            <div class="fact"><div class="fact-icon">🎓</div> B.S. Business Administration — Accounting, University of Arizona</div>
+            <div class="fact"><div class="fact-icon">📍</div> Greensboro, North Carolina</div>
+            <div class="fact"><div class="fact-icon">✉️</div> Haileypetsch@.com</div>
+            <div class="fact"><div class="fact-icon">📊</div> Currently expanding into SQL &amp; data analytics</div>
+          </div>
+        </div>
+      </div>
+      <div class="highlights-grid">
+        <div class="hcard">
+          <div class="icon">🏎️</div>
+          <h4>Aviation Finance</h4>
+          <p>Variance analysis and Program revenue expansion exploration at Honda Aircraft Company.</p>
+        </div>
+        <div class="hcard">
+          <div class="icon">🌐</div>
+          <h4>Global Trade</h4>
+          <p>Led financial reporting for new tariffs at American Honda during shifting global trade policy.</p>
+        </div>
+        <div class="hcard">
+          <div class="icon">📈</div>
+          <h4>Budgeting &amp; FP&amp;A</h4>
+          <p>Prepared new model budgets and presented variance analysis to upper management monthly.</p>
+        </div>
+        <div class="hcard">
+          <div class="icon">🤖</div>
+          <h4>Automation &amp; AI</h4>
+          <p>Leverages automation and AI prompting to enhance reporting efficiency and insights.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Experience -->
+<section id="experience">
+  <div class="max-w">
+    <div class="section-heading dark">EXPERIENCE</div>
+    <p class="section-intro">A drive for learning across all facets of the automotive industry.</p>
+
+    <div class="tl-item">
+      <div class="tl-company">Honda Development and Manufacturing of America</div>
+      <div class="tl-role">Mechanical Engineer</div>
+      <div class="tl-meta">Marysville, OH &nbsp;·&nbsp; Jun 2024 – Present</div>
+      <ul class="tl-bullets">
+        <li>Performed month-end close including journal entries, accruals, and GL reconciliations in compliance with GAAP.</li>
+        <li>Conducting variance analysis on aircraft performance and maintenance data to explain planned vs. actual discrepancies for sales transactions and program completions.</li>
+        <li>Collaborate cross-functionally to resolve financial data inaccuracies and align with business partners in customer service.</li>
+      </ul>
     </div>
 
-    <div class="grid">
-        <a href="mailto:your-email@example.com" class="block-btn teal-btn">GET IN TOUCH</a>
-        <a href="#" class="block-btn">EXPERIENCE</a>
-        <a href="#" class="block-btn">RESUME</a>
-        <a href="https://linkedin.com/in/haileysinclair" target="_blank" class="block-btn">LINKEDIN</a>
+    <div class="tl-item">
+      <div class="tl-company">American Honda Motors</div>
+      <div class="tl-role">Trade Analyst</div>
+      <div class="tl-meta">Marysville, OH &nbsp;·&nbsp; Apr 2025 – Dec 2025</div>
+      <ul class="tl-bullets">
+        <li>Cash clearing and reconciliations by screening broker billings and monitoring transactions amid evolving global trade regulations.</li>
+        <li>Led development of consolidated financial reporting for new tariffs using innovative software and automation to analyze data and prepare forecasts.</li>
+        <li>Built relationships with industry experts and government agencies to adapt to changing automotive trade policies.</li>
+        <li>Presented financial analysis and research methods to finance leaders and business partners to align with organizational goals.</li>
+      </ul>
     </div>
 
+    <div class="tl-item">
+      <div class="tl-company">American Honda Motors</div>
+      <div class="tl-role">New Model Budget Controller</div>
+      <div class="tl-meta">Lincoln, AL &nbsp;·&nbsp; Jul 2024 – Apr 2025</div>
+      <ul class="tl-bullets">
+        <li>Prepared new model budgets, conducting variance analysis by department and presenting material changes to upper management monthly.</li>
+        <li>Pulled reports from SAP business planning software and retrieved open PO data to compare against actuals with FP&amp;A partners.</li>
+        <li>Managed quarterly asset creation and retirement processes, coordinating with project leads to allocate resources effectively.</li>
+        <li>Identified process improvement opportunities in budgeting and reporting, enhancing efficiency and delivering reliable financial insights.</li>
+      </ul>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-company">CAP Advisory Group</div>
+      <div class="tl-role">Accounting Intern</div>
+      <div class="tl-meta">Singapore &nbsp;·&nbsp; May 2023 – Aug 2023</div>
+      <ul class="tl-bullets">
+        <li>Supported annual audit process by gathering and organizing financial records in compliance with accounting standards and regulatory requirements.</li>
+        <li>Assisted senior accountants in preparing supporting documentation and financial reports, applying GAAP knowledge to analyze data.</li>
+        <li>Collaborated with internal teams to collect financial information and develop stakeholder communication skills.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills">
+  <div class="max-w">
+    <div class="section-heading dark">SKILLS &amp; TOOLS</div>
+    <p class="section-intro">Finance expertise meets modern data tools — and always expanding.</p>
+    <div class="skills-grid">
+      <!-- SAP: blue oval with white SAP text, their signature logo style -->
+      <div class="sk-card">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="32" cy="32" rx="28" ry="20" fill="#111"/>
+          <text x="32" y="38" text-anchor="middle" font-size="20" font-weight="800" font-family="Arial,sans-serif" fill="#F5BC4B" letter-spacing="2">SAP</text>
+        </svg>
+        <div class="sk-name">SAP</div>
+      </div>
+      <!-- Excel: green sheet with white X mark -->
+      <div class="sk-card">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="8" y="4" width="48" height="56" rx="5" fill="#111"/>
+          <rect x="8" y="4" width="28" height="56" rx="5" fill="#111"/>
+          <text x="32" y="43" text-anchor="middle" font-size="30" font-weight="900" font-family="Arial,sans-serif" fill="#F5BC4B">X</text>
+          <rect x="36" y="16" width="18" height="4" rx="2" fill="#F5BC4B" opacity="0.7"/>
+          <rect x="36" y="24" width="18" height="4" rx="2" fill="#F5BC4B" opacity="0.7"/>
+          <rect x="36" y="32" width="18" height="4" rx="2" fill="#F5BC4B" opacity="0.7"/>
+          <rect x="36" y="40" width="18" height="4" rx="2" fill="#F5BC4B" opacity="0.7"/>
+        </svg>
+        <div class="sk-name">Excel</div>
+      </div>
+      <!-- Power BI: stacked bar chart with magnify circle (Power BI icon style) -->
+      <div class="sk-card">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6"  y="36" width="11" height="22" rx="3" fill="#111"/>
+          <rect x="21" y="24" width="11" height="34" rx="3" fill="#111"/>
+          <rect x="36" y="12" width="11" height="46" rx="3" fill="#111"/>
+          <text x="32" y="9" text-anchor="middle" font-size="8" font-weight="700" font-family="Arial,sans-serif" fill="#111">Power BI</text>
+        </svg>
+        <div class="sk-name">Power BI</div>
+      </div>
+      <!-- Tableau: Tableau cross of circles logo -->
+      <div class="sk-card">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- center -->
+          <rect x="29" y="10" width="6" height="44" rx="3" fill="#111"/>
+          <rect x="10" y="29" width="44" height="6" rx="3" fill="#111"/>
+          <!-- large circles at ends -->
+          <circle cx="32" cy="11" r="5" fill="#111"/>
+          <circle cx="32" cy="53" r="5" fill="#111"/>
+          <circle cx="11" cy="32" r="5" fill="#111"/>
+          <circle cx="53" cy="32" r="5" fill="#111"/>
+          <!-- small circles diagonal -->
+          <circle cx="16" cy="16" r="3.5" fill="#111" opacity="0.55"/>
+          <circle cx="48" cy="16" r="3.5" fill="#111" opacity="0.55"/>
+          <circle cx="16" cy="48" r="3.5" fill="#111" opacity="0.55"/>
+          <circle cx="48" cy="48" r="3.5" fill="#111" opacity="0.55"/>
+          <circle cx="32" cy="32" r="5" fill="#111"/>
+        </svg>
+        <div class="sk-name">Tableau</div>
+      </div>
+      <!-- Xero: circle with bold xero wordmark -->
+      <div class="sk-card">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="32" r="27" fill="#111"/>
+          <text x="32" y="38" text-anchor="middle" font-size="16" font-weight="800" font-family="Arial,sans-serif" fill="#F5BC4B" letter-spacing="1">xero</text>
+        </svg>
+        <div class="sk-name">Xero</div>
+      </div>
+      <!-- SQL: classic database cylinder stack -->
+      <div class="sk-card">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="32" cy="14" rx="20" ry="8" fill="#111"/>
+          <rect x="12" y="14" width="40" height="14" fill="#111"/>
+          <ellipse cx="32" cy="28" rx="20" ry="8" fill="#111"/>
+          <rect x="12" y="28" width="40" height="14" fill="#111"/>
+          <ellipse cx="32" cy="42" rx="20" ry="8" fill="#111"/>
+          <!-- highlight lines -->
+          <ellipse cx="32" cy="14" rx="20" ry="8" fill="none" stroke="#F5BC4B" stroke-width="2.5"/>
+          <ellipse cx="32" cy="28" rx="20" ry="8" fill="none" stroke="#F5BC4B" stroke-width="2.5"/>
+          <ellipse cx="32" cy="42" rx="20" ry="8" fill="none" stroke="#F5BC4B" stroke-width="2.5"/>
+          <line x1="12" y1="14" x2="12" y2="42" stroke="#F5BC4B" stroke-width="2.5"/>
+          <line x1="52" y1="14" x2="52" y2="42" stroke="#F5BC4B" stroke-width="2.5"/>
+        </svg>
+        <div class="sk-name">SQL</div>
+      </div>
+      <!-- AI Prompting: sparkle/star burst -->
+      <div class="sk-card">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- large 4-point star -->
+          <path d="M32 6 L36 28 L58 32 L36 36 L32 58 L28 36 L6 32 L28 28 Z" fill="#111"/>
+          <!-- small star top-right -->
+          <path d="M50 10 L51.5 16 L58 17.5 L51.5 19 L50 25 L48.5 19 L42 17.5 L48.5 16 Z" fill="#111" opacity="0.6"/>
+          <!-- small star bottom-left -->
+          <path d="M14 42 L15 46 L19 47 L15 48 L14 52 L13 48 L9 47 L13 46 Z" fill="#111" opacity="0.6"/>
+        </svg>
+        <div class="sk-name">AI Prompting</div>
+      </div>
+      <!-- Canva: their signature "C" in a circle -->
+      <div class="sk-card">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="32" r="27" fill="#111"/>
+          <path d="M44 22 C40 17 24 17 20 28 C16 39 22 47 32 47 C38 47 43 44 45 40" stroke="#F5BC4B" stroke-width="5.5" stroke-linecap="round" fill="none"/>
+        </svg>
+        <div class="sk-name">Canva</div>
+      </div>
+      <!-- Final Cut Pro: FCP-style diamond with play arrow -->
+      <div class="sk-card">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="6" width="52" height="52" rx="12" fill="#111"/>
+          <!-- clapperboard stripes top -->
+          <rect x="6" y="6" width="52" height="14" rx="4" fill="#111"/>
+          <line x1="18" y1="6" x2="14" y2="20" stroke="#F5BC4B" stroke-width="3"/>
+          <line x1="28" y1="6" x2="24" y2="20" stroke="#F5BC4B" stroke-width="3"/>
+          <line x1="38" y1="6" x2="34" y2="20" stroke="#F5BC4B" stroke-width="3"/>
+          <line x1="48" y1="6" x2="44" y2="20" stroke="#F5BC4B" stroke-width="3"/>
+          <!-- play triangle -->
+          <polygon points="25,30 25,50 46,40" fill="#F5BC4B"/>
+        </svg>
+        <div class="sk-name">Final Cut Pro</div>
+      </div>
+      <!-- GAAP/Reporting: columnar report with $ -->
+      <div class="sk-card">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="4" width="44" height="56" rx="5" fill="#111"/>
+          <line x1="18" y1="18" x2="46" y2="18" stroke="#F5BC4B" stroke-width="3" stroke-linecap="round"/>
+          <line x1="18" y1="28" x2="46" y2="28" stroke="#F5BC4B" stroke-width="3" stroke-linecap="round"/>
+          <line x1="18" y1="38" x2="40" y2="38" stroke="#F5BC4B" stroke-width="3" stroke-linecap="round"/>
+          <text x="32" y="53" text-anchor="middle" font-size="13" font-weight="800" font-family="Arial,sans-serif" fill="#F5BC4B">GAAP</text>
+        </svg>
+        <div class="sk-name">GAAP / Reporting</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Interests -->
+<section id="interests">
+  <div class="max-w">
+    <div class="section-heading orange">BEYOND THE SPREADSHEET</div>
+  </div>
+  <div class="carousel-viewport">
+    <div class="int-track">
+      <div class="int-card"><img src="Hockey.JPG" alt="Hockey" /></div>
+      <div class="int-card"><img src="Me%20flying%20a%20plane.jpeg" alt="Flying a plane" /></div>
+      <div class="int-card"><img src="Singapore%20internship.jpg" alt="Singapore" /></div>
+      <div class="int-card"><img src="Me%20with%20a%20dog.jpeg" alt="With a dog" /></div>
+      <div class="int-card"><img src="Graduation%20photo.jpg" alt="Graduation" /></div>
+      <div class="int-card"><img src="Random%20picture%20of%20me%20in%20college.jpg" alt="College" /></div>
+      <!-- duplicated for seamless infinite loop -->
+      <div class="int-card"><img src="Hockey.JPG" alt="Hockey" /></div>
+      <div class="int-card"><img src="Me%20flying%20a%20plane.jpeg" alt="Flying a plane" /></div>
+      <div class="int-card"><img src="Singapore%20internship.jpg" alt="Singapore" /></div>
+      <div class="int-card"><img src="Me%20with%20a%20dog.jpeg" alt="With a dog" /></div>
+      <div class="int-card"><img src="Graduation%20photo.jpg" alt="Graduation" /></div>
+      <div class="int-card"><img src="Random%20picture%20of%20me%20in%20college.jpg" alt="College" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="max-w">
+    <div class="section-heading">LET'S TALK</div>
+    <p class="contact-sub">Finance, collaboration, or just to connect — feel free to reach out.</p>
+    <div class="contact-grid">
+      <div class="contact-info-card">
+        <h3>GET IN TOUCH</h3>
+        <p>Happy to connect with fellow finance professionals, collaborators, and curious minds.</p>
+        <a class="clink" href="mailto:cqorms@gmail.com"><div class="cl-icon">✉️</div> cqorms@gmail.com</a>
+        <a class="clink" href="https://www.linkedin.com/in/colin-ormsby" target="_blank"><div class="cl-icon">🔗</div> linkedin.com/in/colin-ormsby</a>
+      </div>
+      <div class="contact-form-wrap">
+        <form class="cform" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-row">
+            <div class="form-group"><label for="name">Your Name</label><input type="text" id="name" name="name" placeholder="Jane Smith" required /></div>
+            <div class="form-group"><label for="email">Your Email</label><input type="email" id="email" name="email" placeholder="jane@company.com" required /></div>
+          </div>
+          <div class="form-group"><label for="subject">Subject</label><input type="text" id="subject" name="subject" placeholder="Finance / Collaboration" /></div>
+          <div class="form-group"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell me what you have in mind..."></textarea></div>
+          <button type="submit" class="form-submit">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Colin Ormsby &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/colin-ormsby" target="_blank">LinkedIn</a></p>
+</footer>
+
+<script>
+  // Carousel: set speed based on px/sec so it's consistent across screen sizes
+  const viewport = document.querySelector('.carousel-viewport');
+  const track    = document.querySelector('.int-track');
+  function setCarouselSpeed() {
+    const halfWidth = track.scrollWidth / 2;
+    const pxPerSec  = window.innerWidth < 600 ? 55 : 80;
+    track.style.animationDuration = (halfWidth / pxPerSec).toFixed(1) + 's';
+  }
+  setCarouselSpeed();
+  window.addEventListener('resize', setCarouselSpeed);
+
+  // Drag-to-scroll
+  let isDown = false, startX, scrollLeft;
+  viewport.addEventListener('mousedown', e => {
+    isDown = true; track.classList.add('dragging');
+    startX = e.pageX - viewport.offsetLeft;
+    scrollLeft = viewport.scrollLeft;
+  });
+  viewport.addEventListener('mouseleave', () => { isDown = false; track.classList.remove('dragging'); });
+  viewport.addEventListener('mouseup',    () => { isDown = false; track.classList.remove('dragging'); });
+  viewport.addEventListener('mousemove',  e => {
+    if (!isDown) return; e.preventDefault();
+    const x = e.pageX - viewport.offsetLeft;
+    viewport.scrollLeft = scrollLeft - (x - startX) * 1.5;
+  });
+
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
+    navLinks.forEach(a => { a.style.color = a.getAttribute('href') === '#' + current ? 'var(--accent)' : ''; });
+  });
+  document.querySelector('.cform').addEventListener('submit', function(e) {
+    if (this.action.includes('YOUR_FORM_ID')) {
+      e.preventDefault();
+      const name    = document.getElementById('name').value;
+      const subject = document.getElementById('subject').value || 'Message from your website';
+      const message = document.getElementById('message').value;
+      window.location.href = 'mailto:cqorms@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent('Hi Colin,\n\n' + message + '\n\n— ' + name);
+    }
+  });
+</script>
 </body>
 </html>
