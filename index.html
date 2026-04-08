@@ -13,6 +13,7 @@
             --dark: #1a1a1a;
             --white: #ffffff;
         }
+
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: var(--bg);
@@ -22,6 +23,7 @@
             align-items: center;
             min-height: 100vh;
         }
+
         header {
             width: 100%;
             max-width: 1100px;
@@ -30,9 +32,20 @@
             padding: 40px 20px;
             align-items: center;
         }
-        .logo { font-weight: 800; font-size: 1.2rem; letter-spacing: 2px; }
-        .logo span { color: var(--teal); font-weight: 400; }
 
+        .logo { 
+            font-weight: 800; 
+            font-size: 1.2rem; 
+            letter-spacing: 2px; 
+            text-transform: uppercase;
+        }
+
+        .logo span { 
+            color: var(--teal); 
+            font-weight: 400; 
+        }
+
+        /* Hero Card with Rounded Corners */
         .hero-card {
             background: var(--white);
             border: 2px solid var(--dark);
@@ -42,73 +55,57 @@
             box-shadow: 12px 12px 0px var(--dark);
             display: flex;
             flex-direction: column;
+            border-radius: 24px; /* Rounded corners */
+            overflow: hidden;    /* Prevents header color from bleeding out */
         }
+
         .card-header {
             background: var(--teal);
             color: white;
             padding: 15px 30px;
             border-bottom: 2px solid var(--dark);
             font-weight: 700;
+            letter-spacing: 1px;
         }
+
         .card-content {
             display: flex;
-            padding: 40px;
+            padding: 50px;
             gap: 30px;
         }
-        .bio h1 { font-size: 3rem; line-height: 0.9; margin: 0 0 15px 0; text-transform: uppercase; }
-        .bio p { color: #666; line-height: 1.6; }
 
+        .bio h1 { 
+            font-size: 3.2rem; 
+            line-height: 0.9; 
+            margin: 0 0 15px 0; 
+            text-transform: uppercase; 
+            font-weight: 800;
+        }
+
+        .bio p { 
+            color: #555; 
+            line-height: 1.6; 
+            font-size: 1.1rem;
+        }
+
+        /* Grid - Forced to one line on desktop */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(4, 1fr); 
             gap: 20px;
             width: 90%;
             max-width: 800px;
-            margin: 40px 0;
+            margin: 40px 0 80px 0;
         }
+
+        /* Buttons with Rounded Corners */
         .block-btn {
             background: var(--white);
             border: 2px solid var(--dark);
-            padding: 20px;
+            padding: 20px 10px;
             text-align: center;
             font-weight: 800;
             text-decoration: none;
             color: var(--dark);
             box-shadow: 8px 8px 0px var(--dark);
-            transition: 0.2s;
-        }
-        .block-btn:hover { transform: translate(2px, 2px); box-shadow: 4px 4px 0px var(--dark); }
-        .teal-btn { background: var(--teal); color: white; }
-
-        @media (max-width: 600px) {
-            .card-content { flex-direction: column; text-align: center; }
-            .bio h1 { font-size: 2rem; }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="logo">HAILEY<span>SINCLAIR</span></div>
-    </header>
-
-    <div class="hero-card">
-        <div class="card-header">HELLO.</div>
-        <div class="card-content">
-            <div class="bio">
-                <h1>Hailey<br><span style="color:var(--teal)">Sinclair</span></h1>
-                <p>Mechanical Engineer | Project Lead | Design Strategist</p>
-                <p>Focused on vehicle dynamics and strategic planning at a top R&D center.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="grid">
-        <a href="#" class="block-btn teal-btn">GET IN TOUCH</a>
-        <a href="#" class="block-btn">EXPERIENCE</a>
-        <a href="#" class="block-btn">RESUME</a>
-        <a href="#" class="block-btn">LINKEDIN</a>
-    </div>
-
-</body>
-</html>
+            transition: all 0.2s ease;
