@@ -35,7 +35,6 @@
       overflow-x: hidden;
     }
 
-    /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; justify-content: space-between; align-items: center;
@@ -81,7 +80,6 @@
     }
     .nav-cta-li:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 var(--black); }
 
-    /* ── HERO ── */
     #hero {
       min-height: 100vh;
       display: flex; align-items: center; justify-content: center;
@@ -162,7 +160,6 @@
     .btn-primary { background: var(--accent); color: #fff; }
     .btn-white   { background: var(--card); color: var(--text); }
 
-    /* ── SHARED ── */
     .max-w { max-width: 1100px; margin: 0 auto; }
     .section-heading {
       font-family: 'Bebas Neue', sans-serif;
@@ -176,7 +173,6 @@
     .section-intro { color: var(--muted); max-width: 540px; margin-bottom: 2.5rem; font-size: 0.95rem; }
     .section-intro.light { color: rgba(255,255,255,0.75); }
 
-    /* ── ABOUT ── */
     #about { background: var(--accent); padding: 6rem 5%; }
     .about-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2.5rem; align-items: start; }
     .card {
@@ -208,7 +204,6 @@
     .hcard h4 { font-size: 0.86rem; font-weight: 700; margin-bottom: 0.25rem; }
     .hcard p  { font-size: 0.77rem; color: var(--muted); line-height: 1.5; }
 
-    /* ── EXPERIENCE ── */
     #experience { background: var(--bg); padding: 6rem 5%; }
     .tl-item {
       background: var(--card);
@@ -235,7 +230,6 @@
     }
     .tl-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.7rem; top: 4px; }
 
-    /* ── SKILLS ── */
     #skills { background: var(--bg2); padding: 6rem 5%; }
     .skills-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.2rem; }
     .sk-card {
@@ -250,7 +244,6 @@
     .sk-card svg { width: 64px; height: 64px; margin-bottom: 0.9rem; }
     .sk-name  { font-weight: 700; font-size: 0.88rem; color: var(--black); }
 
-    /* ── INTERESTS (carousel) ── */
     #interests { background: var(--accent2); padding: 5rem 0 4rem; overflow: hidden; }
     #interests .max-w { max-width: 1100px; margin: 0 auto; padding: 0 5%; }
     .carousel-viewport {
@@ -292,15 +285,15 @@
       100% { transform: translateX(-50%); }
     }
 
-    /* ── CONTACT ── */
     #contact { background: var(--black); padding: 6rem 5%; }
     #contact .section-heading { color: #fff; }
     .contact-sub { color: rgba(255,255,255,0.45); margin-bottom: 3rem; font-size: 0.93rem; }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 2.5rem; align-items: start; }
     .contact-info-card {
       background: var(--card); border: var(--border);
       border-radius: var(--radius); padding: 2rem;
       box-shadow: var(--shadow);
+      max-width: 480px;
+      margin: 0 auto;
     }
     .contact-info-card h3 {
       font-family: 'Bebas Neue', sans-serif;
@@ -322,41 +315,20 @@
       display: flex; align-items: center; justify-content: center;
       font-size: 0.85rem; flex-shrink: 0;
     }
-    .contact-form-wrap {
-      background: var(--card); border: var(--border);
-      border-radius: var(--radius); padding: 2rem;
-      box-shadow: var(--shadow);
-    }
-    .cform { display: flex; flex-direction: column; gap: 1rem; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .form-group { display: flex; flex-direction: column; gap: 0.35rem; }
-    .form-group label {
-      font-size: 0.7rem; font-weight: 700;
-      letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted);
-    }
-    .form-group input, .form-group textarea {
-      background: var(--bg); border: 2px solid var(--black);
-      color: var(--text); padding: 0.7rem 0.9rem; border-radius: 8px;
-      font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
-      outline: none; transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .form-group input::placeholder, .form-group textarea::placeholder { color: #aaa; }
-    .form-group input:focus, .form-group textarea:focus {
-      border-color: var(--accent); box-shadow: 3px 3px 0 var(--accent);
-    }
-    .form-group textarea { resize: vertical; min-height: 110px; }
-    .form-submit {
-      background: var(--accent); color: #fff;
-      border: var(--border); border-radius: 10px;
-      padding: 0.85rem; font-weight: 700;
-      font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase;
-      cursor: pointer; font-family: 'DM Sans', sans-serif;
-      box-shadow: 4px 4px 0 var(--black);
-      transition: all 0.15s; width: 100%;
-    }
-    .form-submit:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 var(--black); }
 
-    /* ── FOOTER ── */
+    /* Center-align the contact section content */
+    #contact .max-w {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    #contact .section-heading,
+    #contact .contact-sub {
+      text-align: center;
+      width: 100%;
+    }
+
     footer {
       background: #0a0a0a; border-top: var(--border);
       padding: 1.75rem 5%; text-align: center;
@@ -364,7 +336,6 @@
     }
     footer a { color: var(--accent); text-decoration: none; }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 820px) {
       .hero-card-body { flex-direction: column; text-align: center; gap: 1.5rem; padding: 2rem 1.5rem; }
       .hero-card-top { padding: 1.25rem 1.5rem; flex-wrap: wrap; gap: 0.75rem; }
@@ -431,12 +402,12 @@
     <div class="about-grid">
       <div class="card">
         <div class="card-body about-text">
-          <p>I'm a <strong> Strategist and Mechanical Engineer </strong> based in Los Angeles, CA. My career has taken me through rigorous vehicle dynamics test engineering to leading cross-functional research and development as a Large Project Lead. This experience has driven my transition into strategic planning, where I focus on aligning engineering capability with long-term automotive market strategy to provide product that customers desire.</p>
-          <p>I'm actively expanding my skill set by working towards a <strong>Professional Engineering license and MBA in International Buisness</strong>, focusing on the intersection of engineering, strategy, and international buisness.</p>
+          <p>I'm a <strong>Strategist and Mechanical Engineer</strong> based in Los Angeles, CA. My career has taken me through rigorous vehicle dynamics test engineering to leading cross-functional research and development as a Large Project Lead. This experience has driven my transition into strategic planning, where I focus on aligning engineering capability with long-term automotive market strategy to provide products that customers desire.</p>
+          <p>I'm actively expanding my skill set by working towards a <strong>Professional Engineering license and MBA in International Business</strong>, focusing on the intersection of engineering, strategy, and international business.</p>
           <div class="about-facts">
-            <div class="fact"><div class="fact-icon">🎓</div> B.S. Mechanical Engineering - Distinguished Graduate, Arizona State University </div>
-            <div class="fact"><div class="fact-icon">🎓</div> MBA International Buisness, Louisianna State University </div>
-            <div class="fact"><div class="fact-icon">📍</div> Los Angeles, CA </div>
+            <div class="fact"><div class="fact-icon">🎓</div> B.S. Mechanical Engineering – Distinguished Graduate, Arizona State University</div>
+            <div class="fact"><div class="fact-icon">🎓</div> MBA International Business, Louisiana State University</div>
+            <div class="fact"><div class="fact-icon">📍</div> Los Angeles, CA</div>
             <div class="fact"><div class="fact-icon">✉️</div> Haileypetsch@msn.com</div>
           </div>
         </div>
@@ -449,7 +420,7 @@
         </div>
         <div class="hcard">
           <div class="icon">🌐</div>
-          <h4>Strategic thinking</h4>
+          <h4>Strategic Thinking</h4>
           <p>Focused on long-term planning, leveraging PDCA methodologies to drive cross-functional alignment and strategic project delivery.</p>
         </div>
         <div class="hcard">
@@ -459,7 +430,7 @@
         </div>
         <div class="hcard">
           <div class="icon">🤖</div>
-          <h4>Professional development</h4>
+          <h4>Professional Development</h4>
           <p>Author of a Substack series focused on career growth, professional philosophy, and building a proactive, relentless drive.</p>
         </div>
       </div>
@@ -471,62 +442,65 @@
 <section id="experience">
   <div class="max-w">
     <div class="section-heading dark">EXPERIENCE</div>
-    <p class="section-intro">Passionate about learning about all facets of the automotive industry.</p>
+    <p class="section-intro">Passionate about learning every facet of the automotive industry.</p>
 
     <div class="tl-item">
       <div class="tl-company">Honda Development and Manufacturing of America</div>
       <div class="tl-role">Strategic Sr. Market Analyst</div>
-      <div class="tl-meta">Los Angeles, CA &nbsp;·&nbsp; Jun 2024 – June 2026</div>
+      <div class="tl-meta">Los Angeles, CA &nbsp;·&nbsp; Jun 2024 – Jun 2026</div>
       <ul class="tl-bullets">
-        <li>Performed month-end close including journal entries, accruals, and GL reconciliations in compliance with GAAP.</li>
-        <li>Conducting variance analysis on aircraft performance and maintenance data to explain planned vs. actual discrepancies for sales transactions and program completions.</li>
-        <li>Collaborate cross-functionally to resolve financial data inaccuracies and align with business partners in customer service.</li>
+        <li>Synthesized customer behavior, societal trends, and macro-political signals into forward-looking market intelligence reports, presented directly to executive leadership to inform product strategy.</li>
+        <li>Developed and delivered strategic pitches distilling complex market dynamics into clear recommendations, influencing long-range planning across vehicle lines.</li>
+        <li>Selected to compete in Honda's internal innovation competition ("Shark Tank" format), pitching a novel business concept to a panel of senior leaders and cross-functional stakeholders.</li>
       </ul>
     </div>
 
     <div class="tl-item">
       <div class="tl-company">Honda Development and Manufacturing of America</div>
-      <div class="tl-role">Mechanical Engineer - Ride and Handling Test Engineer</div>
-      <div class="tl-meta">Marysville, OH &nbsp;·&nbsp; June 2024 – May 2026</div>
+      <div class="tl-role">Mechanical Engineer – Ride &amp; Handling Test Engineer</div>
+      <div class="tl-meta">Marysville, OH &nbsp;·&nbsp; Jun 2022 – May 2024</div>
       <ul class="tl-bullets">
-        <li>Performed month-end close including journal entries, accruals, and GL reconciliations in compliance with GAAP.</li>
-        <li>Conducting variance analysis on aircraft performance and maintenance data to explain planned vs. actual discrepancies for sales transactions and program completions.</li>
-        <li>Collaborate cross-functionally to resolve financial data inaccuracies and align with business partners in customer service.</li>
+        <li>Led a cross-functional R&amp;D initiative with 40+ engineers, developing a low-investment, high-profit technology model with an identified revenue potential of $122M.</li>
+        <li>Owned end-to-end vehicle dynamics testing across multiple programs, designing test protocols, collecting chassis data, and translating results into actionable engineering direction.</li>
+        <li>Acted as Large Project Lead, coordinating deliverables and alignment across engineering, design, and business stakeholders to keep programs on schedule.</li>
       </ul>
     </div>
-    
-  <div class="tl-item">
+
+    <div class="tl-item">
       <div class="tl-company">Honda Development and Manufacturing of America</div>
-      <div class="tl-role">Mechanical Engineer - Market Quality </div>
-      <div class="tl-meta">Marysville, OH &nbsp;·&nbsp; September 2024 – December 2024</div>
+      <div class="tl-role">Mechanical Engineer – Market Quality</div>
+      <div class="tl-meta">Marysville, OH &nbsp;·&nbsp; Sep 2023 – Dec 2023</div>
       <ul class="tl-bullets">
-        <li>Performed month-end close including journal entries, accruals, and GL reconciliations in compliance with GAAP.</li>
-        <li>Conducting variance analysis on aircraft performance and maintenance data to explain planned vs. actual discrepancies for sales transactions and program completions.</li>
-        <li>Collaborate cross-functionally to resolve financial data inaccuracies and align with business partners in customer service.</li>
+        <li>Investigated suspension-related field quality issues reported in market, diagnosing root causes and developing corrective action proposals for production vehicles.</li>
+        <li>Collaborated with design and manufacturing teams to validate fixes and prevent recurrence, bridging the gap between customer feedback and engineering response.</li>
+        <li>Built and maintained tracking reports to monitor quality trends across model lines, surfacing early signals for proactive intervention.</li>
       </ul>
     </div>
-    
-      <div class="tl-item">
+
+    <div class="tl-item">
       <div class="tl-company">Honda Development and Manufacturing of America</div>
-      <div class="tl-role">Mechanical Engineer - Suspension Design </div>
-      <div class="tl-meta">Marysville, OH &nbsp;·&nbsp; December 2024 – March 2025</div>
+      <div class="tl-role">Mechanical Engineer – Suspension Design</div>
+      <div class="tl-meta">Marysville, OH &nbsp;·&nbsp; Dec 2022 – Mar 2023</div>
       <ul class="tl-bullets">
-        <li>Performed month-end close including journal entries, accruals, and GL reconciliations in compliance with GAAP.</li>
-        <li>Conducting variance analysis on aircraft performance and maintenance data to explain planned vs. actual discrepancies for sales transactions and program completions.</li>
-        <li>Collaborate cross-functionally to resolve financial data inaccuracies and align with business partners in customer service.</li>
+        <li>Designed and iterated on suspension components, applying GD&amp;T and CAD tools to develop parts that met performance, cost, and manufacturability targets.</li>
+        <li>Evaluated design alternatives through simulation and physical validation, feeding results back into the design loop to optimize component behavior.</li>
+        <li>Partnered with suppliers and manufacturing to ensure design intent translated accurately to production-ready parts.</li>
       </ul>
     </div>
-    
-      <div class="tl-item">
+
+    <div class="tl-item">
       <div class="tl-company">Honda Development and Manufacturing of America</div>
-      <div class="tl-role">Mechanical Engineer - Product and Manufacturing </div>
-      <div class="tl-meta">Marysville, OH &nbsp;·&nbsp; March 2025 – June 2025</div>
+      <div class="tl-role">Mechanical Engineer – Product &amp; Manufacturing</div>
+      <div class="tl-meta">Marysville, OH &nbsp;·&nbsp; Mar 2022 – Jun 2022</div>
       <ul class="tl-bullets">
-        <li>Performed month-end close including journal entries, accruals, and GL reconciliations in compliance with GAAP.</li>
-        <li>Conducting variance analysis on aircraft performance and maintenance data to explain planned vs. actual discrepancies for sales transactions and program completions.</li>
-        <li>Collaborate cross-functionally to resolve financial data inaccuracies and align with business partners in customer service.</li>
+        <li>Supported mass production engineering for suspension systems, conducting on-line testing and validation to ensure manufactured parts met design specifications.</li>
+        <li>Identified process deviations on the production line and collaborated with manufacturing teams to implement corrective actions and maintain quality standards.</li>
+        <li>Developed testing documentation and standardized procedures to improve consistency and traceability across production runs.</li>
       </ul>
     </div>
+
+  </div>
+</section>
 
 <!-- Skills -->
 <section id="skills">
@@ -534,7 +508,6 @@
     <div class="section-heading dark">SKILLS &amp; ACCOMPLISHMENTS</div>
     <p class="section-intro">Engineering and Strategic expertise — and always expanding.</p>
     <div class="skills-grid">
-      <!-- SAP: blue oval with white SAP text, their signature logo style -->
       <div class="sk-card">
         <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
           <ellipse cx="32" cy="32" rx="28" ry="20" fill="#111"/>
@@ -542,7 +515,6 @@
         </svg>
         <div class="sk-name">SAP</div>
       </div>
-      <!-- Excel: green sheet with white X mark -->
       <div class="sk-card">
         <svg viewBox="0 0 64 64" fill="#none" xmlns="http://www.w3.org/2000/svg">
           <rect x="8" y="4" width="48" height="56" rx="5" fill="#111"/>
@@ -555,7 +527,6 @@
         </svg>
         <div class="sk-name">Excel</div>
       </div>
-      <!-- Power BI: stacked bar chart with magnify circle (Power BI icon style) -->
       <div class="sk-card">
         <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="6"  y="36" width="11" height="22" rx="3" fill="#111"/>
@@ -565,18 +536,14 @@
         </svg>
         <div class="sk-name">Power BI</div>
       </div>
-      <!-- Tableau: Tableau cross of circles logo -->
       <div class="sk-card">
         <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- center -->
           <rect x="29" y="10" width="6" height="44" rx="3" fill="#111"/>
           <rect x="10" y="29" width="44" height="6" rx="3" fill="#111"/>
-          <!-- large circles at ends -->
           <circle cx="32" cy="11" r="5" fill="#111"/>
           <circle cx="32" cy="53" r="5" fill="#111"/>
           <circle cx="11" cy="32" r="5" fill="#111"/>
           <circle cx="53" cy="32" r="5" fill="#111"/>
-          <!-- small circles diagonal -->
           <circle cx="16" cy="16" r="3.5" fill="#111" opacity="0.55"/>
           <circle cx="48" cy="16" r="3.5" fill="#111" opacity="0.55"/>
           <circle cx="16" cy="48" r="3.5" fill="#111" opacity="0.55"/>
@@ -585,20 +552,14 @@
         </svg>
         <div class="sk-name">First Principles Thinking</div>
       </div>
-      <!-- Xero: circle with bold xero wordmark -->
-<div class="sk-card">
-  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M10 32C10 32 17 18 32 18C47 18 54 32 54 32C54 32 47 46 32 46C17 46 10 32 10 32Z" 
-          stroke="#111" 
-          stroke-width="5" 
-          stroke-linecap="round" 
-          stroke-linejoin="round"/>
-    
-    <circle cx="32" cy="32" r="7" fill="#111"/>
-  </svg>
-    <div class="sk-name">Market Sensing</div>
+      <div class="sk-card">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 32C10 32 17 18 32 18C47 18 54 32 54 32C54 32 47 46 32 46C17 46 10 32 10 32Z"
+                stroke="#111" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="32" cy="32" r="7" fill="#111"/>
+        </svg>
+        <div class="sk-name">Market Sensing</div>
       </div>
-      <!-- SQL: classic database cylinder stack -->
       <div class="sk-card">
         <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
           <ellipse cx="32" cy="14" rx="20" ry="8" fill="#111"/>
@@ -606,7 +567,6 @@
           <ellipse cx="32" cy="28" rx="20" ry="8" fill="#111"/>
           <rect x="12" y="28" width="40" height="14" fill="#111"/>
           <ellipse cx="32" cy="42" rx="20" ry="8" fill="#111"/>
-          <!-- highlight lines -->
           <ellipse cx="32" cy="14" rx="20" ry="8" fill="none" stroke="#F5BC4B" stroke-width="2.5"/>
           <ellipse cx="32" cy="28" rx="20" ry="8" fill="none" stroke="#F5BC4B" stroke-width="2.5"/>
           <ellipse cx="32" cy="42" rx="20" ry="8" fill="none" stroke="#F5BC4B" stroke-width="2.5"/>
@@ -615,19 +575,14 @@
         </svg>
         <div class="sk-name">SQL</div>
       </div>
-      <!-- AI Prompting: sparkle/star burst -->
       <div class="sk-card">
         <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- large 4-point star -->
           <path d="M32 6 L36 28 L58 32 L36 36 L32 58 L28 36 L6 32 L28 28 Z" fill="#111"/>
-          <!-- small star top-right -->
           <path d="M50 10 L51.5 16 L58 17.5 L51.5 19 L50 25 L48.5 19 L42 17.5 L48.5 16 Z" fill="#111" opacity="0.6"/>
-          <!-- small star bottom-left -->
           <path d="M14 42 L15 46 L19 47 L15 48 L14 52 L13 48 L9 47 L13 46 Z" fill="#111" opacity="0.6"/>
         </svg>
         <div class="sk-name">AI Prompting</div>
       </div>
-      <!-- Canva: their signature "C" in a circle -->
       <div class="sk-card">
         <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="32" cy="32" r="27" fill="#111"/>
@@ -635,39 +590,33 @@
         </svg>
         <div class="sk-name">Canva</div>
       </div>
-      <!-- Final Cut Pro: FCP-style diamond with play arrow -->
       <div class="sk-card">
-  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="16" cy="24" r="5" fill="#111" fill-opacity="0.6"/>
-    <path d="M6 52V42C6 39.79 7.79 38 10 38H22C24.21 38 26 39.79 26 42V52H6Z" fill="#111" fill-opacity="0.6"/>
-
-    <circle cx="48" cy="24" r="5" fill="#111" fill-opacity="0.6"/>
-    <path d="M38 52V42C38 39.79 39.79 38 42 38H54C56.21 38 58 39.79 58 42V52H38Z" fill="#111" fill-opacity="0.6"/>
-
-    <circle cx="32" cy="18" r="7" fill="#111"/>
-    <path d="M18 54V40C18 36.68 20.68 34 24 34H40C43.32 34 46 36.68 46 40V54H18Z" fill="#111"/>
-  </svg>
-        <div class="sk-name">Cross Functional Leadership</div>
-          </div>
-  <div class="sk-card">
-  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M30 14H12C9.79 14 8 15.79 8 18V48C8 50.21 9.79 52 12 52H30V14Z" fill="#111"/>
-    
-    <path d="M34 14H52C54.21 14 56 15.79 56 18V48C56 50.21 54.21 52 52 52H34V14Z" fill="#111"/>
-    
-    <rect x="30" y="16" width="4" height="34" rx="2" fill="#111" fill-opacity="0.4"/>
-
-    <path d="M34 10H38V30L36 28L34 30V10Z" fill="#111" fill-opacity="0.7"/>
-
-    <g fill="#FFF">
-      <rect x="12" y="20" width="14" height="2" rx="1"/>
-      <rect x="12" y="26" width="14" height="2" rx="1"/>
-      <rect x="12" y="32" width="10" height="2" rx="1"/> <rect x="38" y="20" width="14" height="2" rx="1"/>
-      <rect x="38" y="26" width="14" height="2" rx="1"/>
-      <rect x="38" y="32" width="14" height="2" rx="1"/>
-      <rect x="38" y="38" width="8" height="2" rx="1"/>
-    </g>
-  </svg>
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="24" r="5" fill="#111" fill-opacity="0.6"/>
+          <path d="M6 52V42C6 39.79 7.79 38 10 38H22C24.21 38 26 39.79 26 42V52H6Z" fill="#111" fill-opacity="0.6"/>
+          <circle cx="48" cy="24" r="5" fill="#111" fill-opacity="0.6"/>
+          <path d="M38 52V42C38 39.79 39.79 38 42 38H54C56.21 38 58 39.79 58 42V52H38Z" fill="#111" fill-opacity="0.6"/>
+          <circle cx="32" cy="18" r="7" fill="#111"/>
+          <path d="M18 54V40C18 36.68 20.68 34 24 34H40C43.32 34 46 36.68 46 40V54H18Z" fill="#111"/>
+        </svg>
+        <div class="sk-name">Cross-Functional Leadership</div>
+      </div>
+      <div class="sk-card">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M30 14H12C9.79 14 8 15.79 8 18V48C8 50.21 9.79 52 12 52H30V14Z" fill="#111"/>
+          <path d="M34 14H52C54.21 14 56 15.79 56 18V48C56 50.21 54.21 52 52 52H34V14Z" fill="#111"/>
+          <rect x="30" y="16" width="4" height="34" rx="2" fill="#111" fill-opacity="0.4"/>
+          <path d="M34 10H38V30L36 28L34 30V10Z" fill="#111" fill-opacity="0.7"/>
+          <g fill="#FFF">
+            <rect x="12" y="20" width="14" height="2" rx="1"/>
+            <rect x="12" y="26" width="14" height="2" rx="1"/>
+            <rect x="12" y="32" width="10" height="2" rx="1"/>
+            <rect x="38" y="20" width="14" height="2" rx="1"/>
+            <rect x="38" y="26" width="14" height="2" rx="1"/>
+            <rect x="38" y="32" width="14" height="2" rx="1"/>
+            <rect x="38" y="38" width="8" height="2" rx="1"/>
+          </g>
+        </svg>
         <div class="sk-name">Storytelling</div>
       </div>
     </div>
@@ -681,13 +630,12 @@
   </div>
   <div class="carousel-viewport">
     <div class="int-track">
-      <div class="int-card"><img src="Hockey.JPG" alt="Travel" /></div>
-      <div class="int-card"><img src="Me%20flying%20a%20plane.jpeg" alt="Yoga" /></div>
-      <div class="int-card"><img src="Singapore%20internship.jpg" alt="DUG the Dog" /></div>
-      <div class="int-card"><img src="Me%20with%20a%20dog.jpeg" alt="Race cars" /></div>
-      <div class="int-card"><img src="Graduation%20photo.jpg" alt="Networking" /></div>
-      <div class="int-card"><img src="Random%20picture%20of%20me%20in%20college.jpg" alt="Family" /></div>
-      <!-- duplicated for seamless infinite loop -->
+      <div class="int-card"><img src="Hockey.JPG" alt="Hockey" /></div>
+      <div class="int-card"><img src="Me%20flying%20a%20plane.jpeg" alt="Flying a plane" /></div>
+      <div class="int-card"><img src="Singapore%20internship.jpg" alt="Singapore" /></div>
+      <div class="int-card"><img src="Me%20with%20a%20dog.jpeg" alt="With a dog" /></div>
+      <div class="int-card"><img src="Graduation%20photo.jpg" alt="Graduation" /></div>
+      <div class="int-card"><img src="Random%20picture%20of%20me%20in%20college.jpg" alt="College" /></div>
       <div class="int-card"><img src="Hockey.JPG" alt="Hockey" /></div>
       <div class="int-card"><img src="Me%20flying%20a%20plane.jpeg" alt="Flying a plane" /></div>
       <div class="int-card"><img src="Singapore%20internship.jpg" alt="Singapore" /></div>
@@ -702,21 +650,21 @@
 <section id="contact">
   <div class="max-w">
     <div class="section-heading">LET'S TALK</div>
-    <p class="contact-sub"> Profession, collaboration, or just to connect — feel free to reach out.</p>
-    <div class="contact-grid">
-      <div class="contact-info-card">
-        <h3>GET IN TOUCH</h3>
-        <p>Happy to connect with fellow professionals, collaborators, and curious minds.</p>
-        <a class="clink" href="mailto:haileypetsch@msn.com"><div class="cl-icon">✉️</div> haileypetsch@msn.com</a>
-        <a class="clink" href="https://www.linkedin.com/in/Hailey-petsch/" target="_blank"><div class="cl-icon">🔗</div> linkedin.com/in/Hailey-Petsch</a>
-      </div>
-     
+    <p class="contact-sub">Whether it's a professional conversation, a collaboration, or just connecting — feel free to reach out.</p>
+    <div class="contact-info-card">
+      <h3>GET IN TOUCH</h3>
+      <p>Happy to connect with fellow professionals, collaborators, and curious minds.</p>
+      <a class="clink" href="mailto:haileypetsch@msn.com"><div class="cl-icon">✉️</div> haileypetsch@msn.com</a>
+      <a class="clink" href="https://www.linkedin.com/in/Hailey-petsch/" target="_blank"><div class="cl-icon">🔗</div> linkedin.com/in/Hailey-Petsch</a>
+    </div>
+  </div>
+</section>
+
 <footer>
   <p>© 2026 Hailey Petsch-Sinclair &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/Hailey-petsch/" target="_blank">LinkedIn</a></p>
 </footer>
 
 <script>
-  // Carousel: set speed based on px/sec so it's consistent across screen sizes
   const viewport = document.querySelector('.carousel-viewport');
   const track    = document.querySelector('.int-track');
   function setCarouselSpeed() {
@@ -727,7 +675,6 @@
   setCarouselSpeed();
   window.addEventListener('resize', setCarouselSpeed);
 
-  // Drag-to-scroll
   let isDown = false, startX, scrollLeft;
   viewport.addEventListener('mousedown', e => {
     isDown = true; track.classList.add('dragging');
@@ -748,15 +695,6 @@
     let current = '';
     sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
     navLinks.forEach(a => { a.style.color = a.getAttribute('href') === '#' + current ? 'var(--accent)' : ''; });
-  });
-  document.querySelector('.cform').addEventListener('submit', function(e) {
-    if (this.action.includes('YOUR_FORM_ID')) {
-      e.preventDefault();
-      const name    = document.getElementById('name').value;
-      const subject = document.getElementById('subject').value || 'Message from your website';
-      const message = document.getElementById('message').value;
-      window.location.href = 'mailto:haileypetsch@msn.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent('Hi Hailey,\n\n' + message + '\n\n— ' + name);
-    }
   });
 </script>
 </body>
