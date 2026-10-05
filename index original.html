@@ -1,698 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hailey Petsch-Sinclair | Automotive Engineer and Strategist </title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hailey Petsch-Sinclair | Automotive Engineer and Strategist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#F4F0E6; --bg2:#ECE7DB; --ink:#1C1915; --muted:#5B554D;
+  --label:#8A7457; --line:#D8D1C1; --accent:#D64A17;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Inter',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:var(--sans);font-weight:300;background:var(--bg);color:var(--ink);line-height:1.8;font-size:15px}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
-    :root {
-      --bg:        #F0EDE5;
-      --bg2:       #F7EBD2;
-      --card:      #FEFCF8;
-      --accent:    #D64A17;
-      --accent-dk: #D64A17;
-      --accent2:   #D64A17;
-      --accent2-dk:#C44D1F;
-      --black:     #111111;
-      --text:      #111111;
-      --muted:     #5A5852;
-      --border:    3px solid #111111;
-      --radius:    16px;
-      --shadow:    5px 5px 0 #111111;
-      --shadow-lg: 8px 8px 0 #111111;
-    }
+nav{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:0 5%;height:60px;background:var(--bg);border-bottom:1px solid var(--line)}
+.logo{font-family:var(--serif);font-size:1.35rem;font-weight:500;text-decoration:none;letter-spacing:.02em}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a,.label{font-size:.68rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;text-decoration:none}
+.nav-links a:hover{color:var(--accent)}
 
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+.wrap{max-width:900px;margin:0 auto;padding:0 5%}
+section{padding:7rem 0;border-bottom:1px solid var(--line)}
+.label{display:block;color:var(--label);margin-bottom:1.25rem}
+h1,h2{font-family:var(--serif);font-weight:300;line-height:1.08;letter-spacing:-.01em}
+h1{font-size:clamp(3rem,7.5vw,5.5rem)}
+h2{font-size:clamp(2rem,4.5vw,3rem);margin-bottom:2.5rem}
+h3{font-family:var(--serif);font-weight:400;font-size:1.6rem;line-height:1.2}
+p+p{margin-top:1.2rem}
+p{color:var(--muted)}
+strong{color:var(--ink);font-weight:500}
 
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 0.9rem 5%;
-      background: var(--card);
-      border-bottom: var(--border);
-    }
-    .nav-logo {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.5rem; letter-spacing: 3px;
-      color: var(--text); text-decoration: none;
-    }
-    .nav-logo span { color: var(--accent); }
-    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-    .nav-links a {
-      color: var(--text); text-decoration: none;
-      font-size: 0.78rem; font-weight: 600;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--accent); }
-    .nav-ctas { display: flex; gap: 0.6rem; align-items: center; }
-    .nav-cta {
-      background: var(--accent); color: #fff;
-      padding: 0.5rem 1.2rem;
-      border: var(--border); border-radius: 8px;
-      font-size: 0.75rem; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      text-decoration: none;
-      box-shadow: 3px 3px 0 var(--black);
-      transition: all 0.15s;
-    }
-    .nav-cta:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 var(--black); }
-    .nav-cta-li {
-      background: var(--accent2); color: #fff;
-      padding: 0.5rem 1.2rem;
-      border: var(--border); border-radius: 8px;
-      font-size: 0.75rem; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      text-decoration: none;
-      box-shadow: 3px 3px 0 var(--black);
-      transition: all 0.15s;
-    }
-    .nav-cta-li:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 var(--black); }
+#hero{min-height:100vh;display:flex;align-items:center;padding:9rem 0 5rem}
+.rule{width:44px;height:1px;background:var(--ink);margin:2.5rem 0}
+.lede{max-width:470px;font-size:1rem}
+.btns{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.5rem}
+.btn{display:inline-block;padding:.95rem 1.8rem;border:1px solid var(--ink);font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:background .2s,color .2s}
+.btn-solid{background:var(--ink);color:var(--bg)}
+.btn-solid:hover{background:var(--accent);border-color:var(--accent)}
+.btn-line:hover{background:var(--ink);color:var(--bg)}
 
-    #hero {
-      min-height: 100vh;
-      display: flex; align-items: center; justify-content: center;
-      padding: 8rem 5% 5rem;
-      background: var(--bg);
-    }
-    .hero-wrapper {
-      max-width: 720px; width: 100%;
-      display: flex; flex-direction: column; align-items: center;
-    }
-    .hero-card {
-      width: 100%;
-      border: var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow-lg);
-    }
-    .hero-card-top {
-      background: var(--accent);
-      padding: 1.5rem 2.5rem 1.25rem;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .hero-hello {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2.8rem; letter-spacing: 4px;
-      color: rgba(255,255,255,0.95); line-height: 1;
-    }
-    .hero-role-tag {
-      background: rgba(0,0,0,0.2);
-      border: 2px solid rgba(255,255,255,0.3);
-      border-radius: 8px;
-      padding: 0.4rem 1rem;
-      font-size: 0.7rem; font-weight: 700;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      color: rgba(255,255,255,0.9);
-    }
-    .hero-card-body {
-      background: var(--card);
-      padding: 2.5rem 2.5rem 2rem;
-      display: flex; align-items: center; gap: 2.5rem;
-    }
-    .hero-photo {
-      width: 220px; height: 220px;
-      border-radius: 50%;
-      border: var(--border);
-      box-shadow: 4px 4px 0 var(--black);
-      object-fit: cover; object-position: center 15%;
-      flex-shrink: 0;
-    }
-    .hero-text { flex: 1; }
-    h1 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(3.5rem, 10vw, 6rem);
-      letter-spacing: 4px; line-height: 0.88;
-      color: var(--text);
-    }
-    h1 span { color: var(--accent); }
-    .hero-tagline {
-      font-size: 0.9rem; color: var(--muted);
-      margin-top: 0.8rem; line-height: 1.7; max-width: 360px;
-    }
-    .hero-btns {
-      display: flex; gap: 0.75rem; flex-wrap: wrap;
-      justify-content: center; margin-top: 2rem;
-    }
-    .btn {
-      padding: 0.8rem 1.6rem;
-      border: var(--border); border-radius: 10px;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 700; font-size: 0.8rem;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      text-decoration: none;
-      box-shadow: 4px 4px 0 var(--black);
-      transition: all 0.15s;
-      display: inline-flex; align-items: center; gap: 0.4rem;
-    }
-    .btn:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 var(--black); }
-    .btn-primary { background: var(--accent); color: #fff; }
-    .btn-white   { background: var(--card); color: var(--text); }
+.about-grid{display:grid;grid-template-columns:1fr 280px;gap:4rem;align-items:start}
+.about-grid img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 15%;display:block}
+.facts{list-style:none;margin-top:2rem;border-top:1px solid var(--line)}
+.facts li{padding:.7rem 0;border-bottom:1px solid var(--line);font-size:.88rem;color:var(--muted)}
+.pillars{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);margin-top:4rem}
+.pillars div{padding:2rem;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pillars div:nth-child(2n){border-right:0}
+.pillars div:nth-last-child(-n+2){border-bottom:0}
+.pillars h3{font-size:1.3rem;margin-bottom:.5rem}
+.pillars p{font-size:.88rem}
 
-    .max-w { max-width: 1100px; margin: 0 auto; }
-    .section-heading {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(3rem, 7vw, 5rem);
-      letter-spacing: 4px; line-height: 0.9;
-      margin-bottom: 2rem;
-    }
-    .section-heading.light  { color: #fff; }
-    .section-heading.dark   { color: var(--text); }
-    .section-heading.orange { color: #fff; }
-    .section-intro { color: var(--muted); max-width: 540px; margin-bottom: 2.5rem; font-size: 0.95rem; }
-    .section-intro.light { color: rgba(255,255,255,0.75); }
+.job{display:grid;grid-template-columns:200px 1fr;gap:3rem;padding:2.5rem 0;border-top:1px solid var(--line)}
+.job:last-child{border-bottom:1px solid var(--line)}
+.job .meta{font-size:.82rem;color:var(--muted);line-height:1.6}
+.job .meta b{display:block;font-weight:500;color:var(--label);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.5rem}
+.job ul{list-style:none;margin-top:1rem}
+.job li{padding-left:1.1rem;position:relative;color:var(--muted);font-size:.9rem;margin-bottom:.6rem}
+.job li::before{content:'';position:absolute;left:0;top:.8em;width:6px;height:1px;background:var(--ink)}
 
-    #about { background: var(--accent); padding: 6rem 5%; }
-    .about-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2.5rem; align-items: start; }
-    .card {
-      background: var(--card);
-      border: var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-    .card-body { padding: 2rem; }
-    .about-text p { color: var(--muted); margin-bottom: 0.9rem; line-height: 1.8; font-size: 0.93rem; }
-    .about-text p strong { color: var(--text); }
-    .about-facts { display: flex; flex-direction: column; gap: 0.7rem; margin-top: 1.25rem; }
-    .fact { display: flex; align-items: center; gap: 0.75rem; color: var(--muted); font-size: 0.86rem; }
-    .fact-icon {
-      width: 32px; height: 32px; border-radius: 8px;
-      background: var(--bg); border: 2px solid var(--black);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.85rem; flex-shrink: 0;
-    }
-    .highlights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .hcard {
-      background: var(--card); border: var(--border);
-      border-radius: var(--radius); padding: 1.4rem;
-      box-shadow: var(--shadow);
-      transition: transform 0.15s, box-shadow 0.15s;
-    }
-    .hcard:hover { transform: translate(-3px,-3px); box-shadow: 8px 8px 0 var(--black); }
-    .hcard .icon { font-size: 1.4rem; margin-bottom: 0.4rem; }
-    .hcard h4 { font-size: 0.86rem; font-weight: 700; margin-bottom: 0.25rem; }
-    .hcard p  { font-size: 0.77rem; color: var(--muted); line-height: 1.5; }
+.skills{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.skills span{padding:1.4rem 1.5rem;border-right:1px solid var(--line);border-bottom:1px solid var(--line);font-family:var(--serif);font-size:1.25rem;font-weight:400}
 
-    #experience { background: var(--bg); padding: 6rem 5%; }
-    .tl-item {
-      background: var(--card);
-      border: var(--border);
-      border-radius: var(--radius);
-      padding: 1.75rem 2rem;
-      margin-bottom: 1.25rem;
-      box-shadow: var(--shadow);
-      transition: transform 0.15s, box-shadow 0.15s;
-    }
-    .tl-item:hover { transform: translate(-3px,-3px); box-shadow: 8px 8px 0 var(--black); }
-    .tl-company {
-      font-size: 0.68rem; font-weight: 700;
-      letter-spacing: 0.15em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: 0.2rem;
-    }
-    .tl-role { font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 0.2rem; }
-    .tl-meta { font-size: 0.78rem; color: var(--muted); margin-bottom: 0.75rem; }
-    .tl-bullets { list-style: none; }
-    .tl-bullets li {
-      position: relative; padding-left: 1.2rem;
-      color: var(--muted); font-size: 0.88rem;
-      margin-bottom: 0.45rem; line-height: 1.65;
-    }
-    .tl-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.7rem; top: 4px; }
+.panels{display:grid;grid-template-columns:1fr 1fr 1fr;border:1px solid var(--line)}
+.panels>div{padding:2.5rem 2rem;display:flex;flex-direction:column;align-items:flex-start;border-right:1px solid var(--line)}
+.panels>div:last-child{border-right:0}
+.panels>div:nth-child(even){background:var(--bg2)}
+.panels h3{margin-bottom:1rem}
+.panels p{font-size:.9rem;margin-bottom:2rem;flex:1}
 
-    #skills { background: var(--bg2); padding: 6rem 5%; }
-    .skills-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.2rem; }
-    .sk-card {
-      background: #F5BC4B; border: var(--border);
-      border-radius: var(--radius); padding: 1.5rem 1rem;
-      box-shadow: var(--shadow);
-      transition: transform 0.15s, box-shadow 0.15s;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      aspect-ratio: 1; text-align: center;
-    }
-    .sk-card:hover { transform: translate(-3px,-3px); box-shadow: 8px 8px 0 var(--black); }
-    .sk-card svg { width: 64px; height: 64px; margin-bottom: 0.9rem; }
-    .sk-name  { font-weight: 700; font-size: 0.88rem; color: var(--black); }
+.gallery{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-top:1rem}
+.gallery figure{margin:0}
+.gallery img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
+.gallery figcaption{margin-top:.6rem;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--label);font-weight:500}
 
-    #interests { background: var(--accent2); padding: 5rem 0 4rem; overflow: hidden; }
-    #interests .max-w { max-width: 1100px; margin: 0 auto; padding: 0 5%; }
-    .carousel-viewport {
-      overflow: hidden;
-      padding: 1rem 0 2rem;
-      cursor: grab;
-      user-select: none;
-      -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
-      mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
-    }
-    .carousel-viewport:active { cursor: grabbing; }
-    .int-track {
-      display: flex; gap: 1.4rem;
-      width: max-content;
-      animation: scroll-carousel 30s linear infinite;
-      will-change: transform;
-    }
-    .int-track:hover { animation-play-state: paused; }
-    .int-track.dragging { animation: none; }
-    .int-card {
-      flex: 0 0 320px; height: 400px;
-      border: var(--border);
-      border-radius: var(--radius); overflow: hidden;
-      box-shadow: var(--shadow);
-      transition: transform 0.4s cubic-bezier(.25,.8,.25,1), box-shadow 0.4s cubic-bezier(.25,.8,.25,1);
-    }
-    .int-card:hover {
-      transform: scale(1.05) translateY(-6px);
-      box-shadow: 10px 14px 0 var(--black);
-      z-index: 2;
-    }
-    .int-card img {
-      width: 100%; height: 100%; object-fit: cover; display: block;
-      transition: transform 0.5s ease;
-    }
-    .int-card:hover img { transform: scale(1.08); }
-    @keyframes scroll-carousel {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
+.contact-list{list-style:none;border-top:1px solid var(--line);max-width:520px}
+.contact-list li{border-bottom:1px solid var(--line)}
+.contact-list a{display:flex;justify-content:space-between;padding:1rem 0;text-decoration:none;font-size:.92rem}
+.contact-list a:hover{color:var(--accent)}
+.contact-list span{color:var(--label);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;padding-top:.2rem}
 
-    #contact { background: var(--black); padding: 6rem 5%; }
-    #contact .section-heading { color: #fff; }
-    .contact-sub { color: rgba(255,255,255,0.45); margin-bottom: 3rem; font-size: 0.93rem; }
-    .contact-info-card {
-      background: var(--card); border: var(--border);
-      border-radius: var(--radius); padding: 2rem;
-      box-shadow: var(--shadow);
-      max-width: 480px;
-      margin: 0 auto;
-    }
-    .contact-info-card h3 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2rem; letter-spacing: 3px;
-      margin-bottom: 0.5rem; color: var(--text);
-    }
-    .contact-info-card > p { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.5rem; line-height: 1.7; }
-    .clink {
-      display: flex; align-items: center; gap: 0.75rem;
-      color: var(--muted); text-decoration: none; font-size: 0.88rem;
-      padding: 0.7rem 0; border-bottom: 2px solid var(--bg2);
-      transition: color 0.2s;
-    }
-    .clink:last-child { border-bottom: none; }
-    .clink:hover { color: var(--accent); }
-    .cl-icon {
-      width: 32px; height: 32px; border-radius: 8px;
-      background: var(--bg); border: 2px solid var(--black);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.85rem; flex-shrink: 0;
-    }
+footer{padding:2rem 5%;text-align:center;font-size:.78rem;color:var(--muted)}
 
-    /* Center-align the contact section content */
-    #contact .max-w {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-    #contact .section-heading,
-    #contact .contact-sub {
-      text-align: center;
-      width: 100%;
-    }
-
-    footer {
-      background: #0a0a0a; border-top: var(--border);
-      padding: 1.75rem 5%; text-align: center;
-      color: rgba(255,255,255,0.35); font-size: 0.82rem;
-    }
-    footer a { color: var(--accent); text-decoration: none; }
-
-    @media (max-width: 820px) {
-      .hero-card-body { flex-direction: column; text-align: center; gap: 1.5rem; padding: 2rem 1.5rem; }
-      .hero-card-top { padding: 1.25rem 1.5rem; flex-wrap: wrap; gap: 0.75rem; }
-      .hero-tagline { margin: 0.75rem auto 0; }
-      .about-grid { grid-template-columns: 1fr; }
-      .highlights-grid { grid-template-columns: 1fr 1fr; }
-      .skills-grid { grid-template-columns: repeat(3, 1fr); }
-      .int-card { flex: 0 0 270px; height: 340px; }
-      .contact-grid { grid-template-columns: 1fr; }
-      .form-row { grid-template-columns: 1fr; }
-      nav .nav-links { display: none; }
-      .hero-btns { margin-top: 1.5rem; }
-    }
-    @media (max-width: 500px) {
-      .skills-grid { grid-template-columns: repeat(2, 1fr); }
-      .int-card { flex: 0 0 240px; height: 300px; }
-    }
-  </style>
+@media(max-width:820px){
+  section{padding:5rem 0}
+  .nav-links li:not(:last-child){display:none}
+  .about-grid{grid-template-columns:1fr;gap:2.5rem}
+  .about-grid img{max-width:300px}
+  .pillars,.panels,.skills{grid-template-columns:1fr}
+  .pillars div{border-right:0}
+  .pillars div:nth-last-child(2){border-bottom:1px solid var(--line)}
+  .panels>div{border-right:0;border-bottom:1px solid var(--line)}
+  .panels>div:last-child{border-bottom:0}
+  .job{grid-template-columns:1fr;gap:1rem}
+  .gallery{display:flex;overflow-x:auto;gap:1rem;padding-bottom:1rem}
+  .gallery figure{flex:0 0 200px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
 </head>
 <body>
 
 <nav>
-  <a class="nav-logo" href="#hero">Hailey <span>Petsch-Sinclair</span></a>
+  <a class="logo" href="#hero">Hailey Petsch-Sinclair</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#writing">Writing</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <div class="nav-ctas">
-    <a class="nav-cta-li" href="https://www.linkedin.com/in/hailey-petsch/" target="_blank">LinkedIn ↗</a>
-    <a class="nav-cta" href="Hailey_Petsch-Sinclair_resume.pdf" download>⬇ Resume</a>
-  </div>
 </nav>
 
-<!-- Hero -->
 <section id="hero">
-  <div class="hero-wrapper">
-    <div class="hero-card">
-      <div class="hero-card-top">
-        <div class="hero-hello">Hello.</div>
-      </div>
-      <div class="hero-card-body">
-        <img class="hero-photo" src="HAILEY.jpg" alt="Hailey Petsch-Sinclair" />
-        <div class="hero-text">
-          <h1>Hailey<br /><span>Petsch-Sinclair</span></h1>
-          <p class="hero-tagline">Strategic Analyst and Engineer at Honda R&D America — Creating clear market strategies and developing confident future products.</p>
-        </div>
-      </div>
-    </div>
-    <div class="hero-btns">
-      <a class="btn btn-primary" href="#contact">Get in Touch</a>
-      <a class="btn btn-white" href="#experience">View Experience</a>
-      <a class="btn btn-white" href="Hailey_Petsch-Sinclair_resume.pdf" download>⬇ Resume</a>
-      <a class="btn btn-white" href="https://www.linkedin.com/in/hailey-petsch/" target="_blank">LinkedIn ↗</a>
+  <div class="wrap">
+    <span class="label">Automotive engineer and strategist</span>
+    <h1>Clear market strategy for confident future products.</h1>
+    <div class="rule"></div>
+    <p class="lede">I'm a strategic analyst and engineer at Honda Development and Manufacturing of America, aligning engineering capability with long-term automotive market strategy.</p>
+    <div class="btns">
+      <a class="btn btn-solid" href="#contact">Get in touch</a>
+      <a class="btn btn-line" href="#experience">View experience</a>
+      <a class="btn btn-line" href="Hailey_Petsch-Sinclair_resume.pdf" download>Download resume</a>
     </div>
   </div>
 </section>
 
-<!-- About -->
 <section id="about">
-  <div class="max-w">
-    <div class="section-heading light">ABOUT ME</div>
+  <div class="wrap">
+    <span class="label">About</span>
+    <h2>Hello, I'm Hailey.</h2>
     <div class="about-grid">
-      <div class="card">
-        <div class="card-body about-text">
-          <p>I'm a <strong>Strategist and Mechanical Engineer</strong> based in Los Angeles, CA. My career has taken me through rigorous vehicle dynamics test engineering to leading cross-functional research and development as a Large Project Lead. This experience has driven my transition into strategic planning, where I focus on aligning engineering capability with long-term automotive market strategy to provide products that customers desire.</p>
-          <p>I'm actively expanding my skill set by working towards a <strong>Professional Engineering license and MBA in International Business</strong>, focusing on the intersection of engineering, strategy, and international business.</p>
-          <div class="about-facts">
-            <div class="fact"><div class="fact-icon">🎓</div> B.S. Mechanical Engineering – Distinguished Graduate, Arizona State University</div>
-            <div class="fact"><div class="fact-icon">🎓</div> MBA International Business, Louisiana State University</div>
-            <div class="fact"><div class="fact-icon">📍</div> Los Angeles, CA</div>
-            <div class="fact"><div class="fact-icon">✉️</div> Haileypetsch@msn.com</div>
-          </div>
-        </div>
+      <div>
+        <p>I was born and raised in Denver, Colorado, and earned my B.S. in Mechanical Engineering from Arizona State University as a Distinguished Graduate. During college I studied abroad at the University of Manchester, which fueled my love of travel and exploration.</p>
+        <p>I'm a <strong>strategist and mechanical engineer</strong> based in Los Angeles. My career has taken me through vehicle dynamics test engineering to leading cross-functional research and development as a Large Project Lead. That experience drove my move into strategic planning, where I align engineering capability with long-term automotive market strategy to deliver products customers want.</p>
+        <p>I'm working toward a <strong>Professional Engineering license and an MBA in International Business</strong>, focused on the intersection of engineering, strategy, and international business. As a SEMA student loan scholarship recipient, I've stayed connected to the SEMA community and to my passion for automotive design, strategy, and the economics behind the industry.</p>
+        <p>Outside of work, I love learning, travel, yoga, and hiking. My goal is to grow into a Director or strategy-level leader and, eventually, to consult independently as an engineering strategist.</p>
+        <ul class="facts">
+          <li>B.S. Mechanical Engineering, Distinguished Graduate, Arizona State University</li>
+          <li>MBA International Business, Louisiana State University</li>
+          <li>Los Angeles, CA</li>
+        </ul>
       </div>
-      <div class="highlights-grid">
-        <div class="hcard">
-          <div class="icon">🏎️</div>
-          <h4>Mechanical Engineering</h4>
-          <p>Experience in Design, Test, Quality, Manufacturing, and Product engineering @ Honda.</p>
-        </div>
-        <div class="hcard">
-          <div class="icon">🌐</div>
-          <h4>Strategic Thinking</h4>
-          <p>Focused on long-term planning, leveraging PDCA methodologies to drive cross-functional alignment and strategic project delivery.</p>
-        </div>
-        <div class="hcard">
-          <div class="icon">📈</div>
-          <h4>Cross-Functional Leadership &amp; Storytelling</h4>
-          <p>Executing complex R&D initiatives as a Large Project Lead.</p>
-        </div>
-        <div class="hcard">
-          <div class="icon">🤖</div>
-          <h4>Professional Development</h4>
-          <p>Author of a Substack series focused on career growth, professional philosophy, and building a proactive, relentless drive.</p>
-        </div>
-      </div>
+      <img src="HAILEY.jpg" alt="Hailey Petsch-Sinclair" />
+    </div>
+    <div class="pillars">
+      <div><h3>Mechanical engineering</h3><p>Experience in design, test, quality, manufacturing, and product engineering at Honda.</p></div>
+      <div><h3>Strategic thinking</h3><p>Focused on long-term planning, using PDCA methodologies to drive cross-functional alignment and strategic project delivery.</p></div>
+      <div><h3>Cross-functional leadership and storytelling</h3><p>Executing complex R&amp;D initiatives as a Large Project Lead.</p></div>
+      <div><h3>Professional development</h3><p>Author of a Substack series on career growth, professional philosophy, and building a proactive, relentless drive.</p></div>
     </div>
   </div>
 </section>
 
-<!-- Experience -->
 <section id="experience">
-  <div class="max-w">
-    <div class="section-heading dark">EXPERIENCE</div>
-    <p class="section-intro">Passionate about learning every facet of the automotive industry.</p>
+  <div class="wrap">
+    <span class="label">Experience</span>
+    <h2>Every facet of the automotive industry.</h2>
 
-    <div class="tl-item">
-      <div class="tl-company">Honda Development and Manufacturing of America</div>
-      <div class="tl-role">Strategic Sr. Market Analyst</div>
-      <div class="tl-meta">Los Angeles, CA &nbsp;·&nbsp; May 2026 –NOW </div>
-      <ul class="tl-bullets">
-        <li>Synthesized customer behavior, societal trends, and macro-political signals into forward-looking market intelligence reports, presented directly to executive leadership to inform product strategy.</li>
-        <li>Developed and delivered strategic pitches distilling complex market dynamics into clear recommendations, influencing long-range planning across vehicle lines.</li>
-         </ul>
+    <div class="job">
+      <div class="meta"><b>Honda Development and Manufacturing of America</b>Los Angeles, CA<br />May 2026 to present</div>
+      <div>
+        <h3>Strategic Sr. Market Analyst</h3>
+        <ul>
+          <li>Synthesized customer behavior, societal trends, and macro-political signals into forward-looking market intelligence reports, presented directly to executive leadership to inform product strategy.</li>
+          <li>Developed and delivered strategic pitches distilling complex market dynamics into clear recommendations, influencing long-range planning across vehicle lines.</li>
+        </ul>
+      </div>
     </div>
 
-    <div class="tl-item">
-      <div class="tl-company">Honda Development and Manufacturing of America</div>
-      <div class="tl-role">Mechanical Engineer – Ride &amp; Handling Test Engineer</div>
-      <div class="tl-meta">Marysville, OH &nbsp;·&nbsp; Jun 2024 – May 2026</div>
-      <ul class="tl-bullets">
-        <li>Led a cross-functional R&amp;D initiative with 40+ engineers, developing a low-investment, high-profit trim model with a revenue potential of $122M.</li>
-        <li>Owned vehicle dynamics testing, collecting and analyzing chassis data, and translating results into engineering direction.</li>
-        <li>Acted as Large Project Lead, coordinating deliverables and alignment across engineering, design, and business stakeholders to keep projects on schedule.</li>
-      </ul>
+    <div class="job">
+      <div class="meta"><b>Honda Development and Manufacturing of America</b>Marysville, OH<br />Jun 2024 to May 2026</div>
+      <div>
+        <h3>Mechanical Engineer, Ride &amp; Handling Test Engineer</h3>
+        <ul>
+          <li>Led a cross-functional R&amp;D initiative with 40+ engineers, developing a low-investment, high-profit trim model with a revenue potential of $122M.</li>
+          <li>Owned vehicle dynamics testing, collecting and analyzing chassis data, and translating results into engineering direction.</li>
+          <li>Acted as Large Project Lead, coordinating deliverables and alignment across engineering, design, and business stakeholders to keep projects on schedule.</li>
+        </ul>
+      </div>
     </div>
 
-    <div class="tl-item">
-      <div class="tl-company">Honda Development and Manufacturing of America</div>
-      <div class="tl-role">Mechanical Engineer – Market Quality</div>
-      <div class="tl-meta">Marysville, OH &nbsp;·&nbsp; Sep 2024 – Dec 2024</div>
-      <ul class="tl-bullets">
-        <li>Investigated suspension-related quality issues reported in market by customers, diagnosing root causes and developing corrective action proposals for production vehicles.</li>
-        <li>Collaborated with design and manufacturing teams to validate fixes and prevent recurrence, bridging the gap between customer feedback and engineering development and production.</li>
-        <li>Built and maintained tracking reports to monitor quality trends across model lines, surfacing early signals for proactive intervention.</li>
-      </ul>
+    <div class="job">
+      <div class="meta"><b>Honda Development and Manufacturing of America</b>Marysville, OH<br />Sep 2024 to Dec 2024</div>
+      <div>
+        <h3>Mechanical Engineer, Market Quality</h3>
+        <ul>
+          <li>Investigated suspension-related quality issues reported in market by customers, diagnosing root causes and developing corrective action proposals for production vehicles.</li>
+          <li>Collaborated with design and manufacturing teams to validate fixes and prevent recurrence, bridging the gap between customer feedback and engineering development and production.</li>
+          <li>Built and maintained tracking reports to monitor quality trends across model lines, surfacing early signals for proactive intervention.</li>
+        </ul>
+      </div>
     </div>
 
-    <div class="tl-item">
-      <div class="tl-company">Honda Development and Manufacturing of America</div>
-      <div class="tl-role">Mechanical Engineer – Suspension Design</div>
-      <div class="tl-meta">Marysville, OH &nbsp;·&nbsp; Dec 2024 – Mar 2025</div>
-      <ul class="tl-bullets">
-        <li>Designed and iterated suspension component development, applying GD&amp;T and CAD tools to develop parts that met performance, cost, and manufacturability targets.</li>
-        <li>Evaluated design alternatives through simulation and physical validation, feeding results back into the design loop to optimize component behavior.</li>
-        <li>Partnered with suppliers and manufacturing to ensure design intent translated accurately to production-ready parts.</li>
-      </ul>
+    <div class="job">
+      <div class="meta"><b>Honda Development and Manufacturing of America</b>Marysville, OH<br />Dec 2024 to Mar 2025</div>
+      <div>
+        <h3>Mechanical Engineer, Suspension Design</h3>
+        <ul>
+          <li>Designed and iterated suspension component development, applying GD&amp;T and CAD tools to develop parts that met performance, cost, and manufacturability targets.</li>
+          <li>Evaluated design alternatives through simulation and physical validation, feeding results back into the design loop to optimize component behavior.</li>
+          <li>Partnered with suppliers and manufacturing to ensure design intent translated accurately to production-ready parts.</li>
+        </ul>
+      </div>
     </div>
 
-    <div class="tl-item">
-      <div class="tl-company">Honda Development and Manufacturing of America</div>
-      <div class="tl-role">Mechanical Engineer – Product Engineering </div>
-      <div class="tl-meta">Marysville, OH &nbsp;·&nbsp; Mar 2025 – Jun 2025</div>
-      <ul class="tl-bullets">
-        <li>Supported mass production engineering for suspension systems, conducting testing and validation to ensure manufactured parts met design specifications.</li>
-        <li>Identified product deviations in production and collaborated with manufacturing teams to implement corrective actions and maintain quality standards.</li>
-        <li>Developed testing documentation and standardized procedures to improve consistency and traceability across production.</li>
-      </ul>
+    <div class="job">
+      <div class="meta"><b>Honda Development and Manufacturing of America</b>Marysville, OH<br />Mar 2025 to Jun 2025</div>
+      <div>
+        <h3>Mechanical Engineer, Product Engineering</h3>
+        <ul>
+          <li>Supported mass production engineering for suspension systems, conducting testing and validation to ensure manufactured parts met design specifications.</li>
+          <li>Identified product deviations in production and collaborated with manufacturing teams to implement corrective actions and maintain quality standards.</li>
+          <li>Developed testing documentation and standardized procedures to improve consistency and traceability across production.</li>
+        </ul>
+      </div>
     </div>
-
   </div>
 </section>
 
-<!-- Skills -->
 <section id="skills">
-  <div class="max-w">
-    <div class="section-heading dark">SKILLS &amp; ACCOMPLISHMENTS</div>
-    <p class="section-intro">Engineering and Strategic expertise — and always expanding.</p>
-    <div class="skills-grid">
-      <div class="sk-card">
-        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="32" cy="32" rx="28" ry="20" fill="#111"/>
-          <text x="32" y="38" text-anchor="middle" font-size="20" font-weight="800" font-family="Arial,sans-serif" fill="#F5BC4B" letter-spacing="2">SAP</text>
-        </svg>
-        <div class="sk-name">SAP</div>
+  <div class="wrap">
+    <span class="label">Skills and accomplishments</span>
+    <h2>Engineering and strategic expertise, always expanding.</h2>
+    <div class="skills">
+      <span>SAP</span><span>Excel</span><span>Power BI</span>
+      <span>SQL</span><span>Canva</span><span>AI prompting</span>
+      <span>First principles thinking</span><span>Market sensing</span><span>Storytelling</span>
+      <span>Cross-functional leadership</span>
+    </div>
+  </div>
+</section>
+
+<section id="writing">
+  <div class="wrap">
+    <span class="label">Writing and life</span>
+    <h2>Ideas, and the life around them.</h2>
+    <div class="panels">
+      <div>
+        <h3>Substack</h3>
+        <p>A series on career growth, professional philosophy, and building a proactive, relentless drive.</p>
+        <a class="btn btn-line" href="https://YOUR-SUBSTACK.substack.com" target="_blank" rel="noopener">Read on Substack</a>
       </div>
-      <div class="sk-card">
-        <svg viewBox="0 0 64 64" fill="#none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="8" y="4" width="48" height="56" rx="5" fill="#111"/>
-          <rect x="8" y="4" width="28" height="56" rx="5" fill="#111"/>
-          <text x="32" y="43" text-anchor="middle" font-size="30" font-weight="900" font-family="Arial,sans-serif" fill="#F5BC4B">X</text>
-          <rect x="36" y="16" width="18" height="4" rx="2" fill="#F5BC4B" opacity="0.7"/>
-          <rect x="36" y="24" width="18" height="4" rx="2" fill="#F5BC4B" opacity="0.7"/>
-          <rect x="36" y="32" width="18" height="4" rx="2" fill="#F5BC4B" opacity="0.7"/>
-          <rect x="36" y="40" width="18" height="4" rx="2" fill="#F5BC4B" opacity="0.7"/>
-        </svg>
-        <div class="sk-name">Excel</div>
+      <div>
+        <h3>Instagram</h3>
+        <p>Travel, hiking, yoga, and everyday exploration, outside the office.</p>
+        <a class="btn btn-line" href="https://instagram.com/YOUR_HANDLE" target="_blank" rel="noopener">Follow on Instagram</a>
       </div>
-      <div class="sk-card">
-        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="6"  y="36" width="11" height="22" rx="3" fill="#111"/>
-          <rect x="21" y="24" width="11" height="34" rx="3" fill="#111"/>
-          <rect x="36" y="12" width="11" height="46" rx="3" fill="#111"/>
-          <text x="32" y="9" text-anchor="middle" font-size="8" font-weight="700" font-family="Arial,sans-serif" fill="#111">Power BI</text>
-        </svg>
-        <div class="sk-name">Power BI</div>
-      </div>
-      <div class="sk-card">
-        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="29" y="10" width="6" height="44" rx="3" fill="#111"/>
-          <rect x="10" y="29" width="44" height="6" rx="3" fill="#111"/>
-          <circle cx="32" cy="11" r="5" fill="#111"/>
-          <circle cx="32" cy="53" r="5" fill="#111"/>
-          <circle cx="11" cy="32" r="5" fill="#111"/>
-          <circle cx="53" cy="32" r="5" fill="#111"/>
-          <circle cx="16" cy="16" r="3.5" fill="#111" opacity="0.55"/>
-          <circle cx="48" cy="16" r="3.5" fill="#111" opacity="0.55"/>
-          <circle cx="16" cy="48" r="3.5" fill="#111" opacity="0.55"/>
-          <circle cx="48" cy="48" r="3.5" fill="#111" opacity="0.55"/>
-          <circle cx="32" cy="32" r="5" fill="#111"/>
-        </svg>
-        <div class="sk-name">First Principles Thinking</div>
-      </div>
-      <div class="sk-card">
-        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10 32C10 32 17 18 32 18C47 18 54 32 54 32C54 32 47 46 32 46C17 46 10 32 10 32Z"
-                stroke="#111" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="32" cy="32" r="7" fill="#111"/>
-        </svg>
-        <div class="sk-name">Market Sensing</div>
-      </div>
-      <div class="sk-card">
-        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="32" cy="14" rx="20" ry="8" fill="#111"/>
-          <rect x="12" y="14" width="40" height="14" fill="#111"/>
-          <ellipse cx="32" cy="28" rx="20" ry="8" fill="#111"/>
-          <rect x="12" y="28" width="40" height="14" fill="#111"/>
-          <ellipse cx="32" cy="42" rx="20" ry="8" fill="#111"/>
-          <ellipse cx="32" cy="14" rx="20" ry="8" fill="none" stroke="#F5BC4B" stroke-width="2.5"/>
-          <ellipse cx="32" cy="28" rx="20" ry="8" fill="none" stroke="#F5BC4B" stroke-width="2.5"/>
-          <ellipse cx="32" cy="42" rx="20" ry="8" fill="none" stroke="#F5BC4B" stroke-width="2.5"/>
-          <line x1="12" y1="14" x2="12" y2="42" stroke="#F5BC4B" stroke-width="2.5"/>
-          <line x1="52" y1="14" x2="52" y2="42" stroke="#F5BC4B" stroke-width="2.5"/>
-        </svg>
-        <div class="sk-name">SQL</div>
-      </div>
-      <div class="sk-card">
-        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M32 6 L36 28 L58 32 L36 36 L32 58 L28 36 L6 32 L28 28 Z" fill="#111"/>
-          <path d="M50 10 L51.5 16 L58 17.5 L51.5 19 L50 25 L48.5 19 L42 17.5 L48.5 16 Z" fill="#111" opacity="0.6"/>
-          <path d="M14 42 L15 46 L19 47 L15 48 L14 52 L13 48 L9 47 L13 46 Z" fill="#111" opacity="0.6"/>
-        </svg>
-        <div class="sk-name">AI Prompting</div>
-      </div>
-      <div class="sk-card">
-        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="32" cy="32" r="27" fill="#111"/>
-          <path d="M44 22 C40 17 24 17 20 28 C16 39 22 47 32 47 C38 47 43 44 45 40" stroke="#F5BC4B" stroke-width="5.5" stroke-linecap="round" fill="none"/>
-        </svg>
-        <div class="sk-name">Canva</div>
-      </div>
-      <div class="sk-card">
-        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="16" cy="24" r="5" fill="#111" fill-opacity="0.6"/>
-          <path d="M6 52V42C6 39.79 7.79 38 10 38H22C24.21 38 26 39.79 26 42V52H6Z" fill="#111" fill-opacity="0.6"/>
-          <circle cx="48" cy="24" r="5" fill="#111" fill-opacity="0.6"/>
-          <path d="M38 52V42C38 39.79 39.79 38 42 38H54C56.21 38 58 39.79 58 42V52H38Z" fill="#111" fill-opacity="0.6"/>
-          <circle cx="32" cy="18" r="7" fill="#111"/>
-          <path d="M18 54V40C18 36.68 20.68 34 24 34H40C43.32 34 46 36.68 46 40V54H18Z" fill="#111"/>
-        </svg>
-        <div class="sk-name">Cross-Functional Leadership</div>
-      </div>
-      <div class="sk-card">
-        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M30 14H12C9.79 14 8 15.79 8 18V48C8 50.21 9.79 52 12 52H30V14Z" fill="#111"/>
-          <path d="M34 14H52C54.21 14 56 15.79 56 18V48C56 50.21 54.21 52 52 52H34V14Z" fill="#111"/>
-          <rect x="30" y="16" width="4" height="34" rx="2" fill="#111" fill-opacity="0.4"/>
-          <path d="M34 10H38V30L36 28L34 30V10Z" fill="#111" fill-opacity="0.7"/>
-          <g fill="#FFF">
-            <rect x="12" y="20" width="14" height="2" rx="1"/>
-            <rect x="12" y="26" width="14" height="2" rx="1"/>
-            <rect x="12" y="32" width="10" height="2" rx="1"/>
-            <rect x="38" y="20" width="14" height="2" rx="1"/>
-            <rect x="38" y="26" width="14" height="2" rx="1"/>
-            <rect x="38" y="32" width="14" height="2" rx="1"/>
-            <rect x="38" y="38" width="8" height="2" rx="1"/>
-          </g>
-        </svg>
-        <div class="sk-name">Storytelling</div>
+      <div>
+        <h3>Work with me</h3>
+        <p>Open to professional conversations, collaborations, and connecting with fellow engineers and strategists.</p>
+        <a class="btn btn-solid" href="#contact">Get in touch</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Interests -->
-<section id="interests">
-  <div class="max-w">
-    <div class="section-heading orange">BEYOND THE OFFICE</div>
-  </div>
-  <div class="carousel-viewport">
-    <div class="int-track">
-      <div class="int-card"><img src="FAMILY.png" alt="FAMILY" /></div>
-      <div class="int-card"><img src="SNOWBOARDING.jpg" alt="SNOWBOARDING" /></div>
-      <div class="int-card"><img src="TRAVEL.jpg" alt="TRAVEL" /></div>
-      <div class="int-card"><img src="HIKING.jpg" alt="HIKING" /></div>
-      <div class="int-card"><img src="JAPAN.jpg" alt="JAPAN" /></div>
-       <div class="int-card"><img src="FAMILY.png" alt="FAMILY" /></div>
-      <div class="int-card"><img src="SNOWBOARDING.jpg" alt="SNOWBOARDING" /></div>
-      <div class="int-card"><img src="TRAVEL.jpg" alt="TRAVEL" /></div>
-      <div class="int-card"><img src="HIKING.jpg" alt="HIKING" /></div>
-      <div class="int-card"><img src="JAPAN.jpg" alt="JAPAN" /></div>
+<section id="life">
+  <div class="wrap">
+    <span class="label">Beyond the office</span>
+    <h2>Family, snow, trails, and travel.</h2>
+    <div class="gallery">
+      <figure><img src="FAMILY.png" alt="Family" /><figcaption>Family</figcaption></figure>
+      <figure><img src="SNOWBOARDING.jpg" alt="Snowboarding" /><figcaption>Snowboarding</figcaption></figure>
+      <figure><img src="TRAVEL.jpg" alt="Travel" /><figcaption>Travel</figcaption></figure>
+      <figure><img src="HIKING.jpg" alt="Hiking" /><figcaption>Hiking</figcaption></figure>
+      <figure><img src="JAPAN.jpg" alt="Japan" /><figcaption>Japan</figcaption></figure>
     </div>
   </div>
 </section>
 
-<!-- Contact -->
-<section id="contact">
-  <div class="max-w">
-    <div class="section-heading">LET'S TALK</div>
-    <p class="contact-sub">Whether it's a professional conversation, a collaboration, or just connecting — feel free to reach out.</p>
-    <div class="contact-info-card">
-      <h3>GET IN TOUCH</h3>
-      <p>Happy to connect with fellow professionals, collaborators, and curious minds.</p>
-      <a class="clink" href="mailto:haileypetsch@msn.com"><div class="cl-icon">✉️</div> haileypetsch@msn.com</a>
-      <a class="clink" href="https://www.linkedin.com/in/Hailey-petsch/" target="_blank"><div class="cl-icon">🔗</div> linkedin.com/in/Hailey-Petsch</a>
-    </div>
+<section id="contact" style="border-bottom:0">
+  <div class="wrap">
+    <span class="label">Contact</span>
+    <h2>Let's talk.</h2>
+    <p style="max-width:470px;margin-bottom:2.5rem">Whether it's a professional conversation, a collaboration, or just connecting, feel free to reach out.</p>
+    <ul class="contact-list">
+      <li><a href="mailto:haileypetsch@msn.com"><span>Email</span>haileypetsch@msn.com</a></li>
+      <li><a href="https://www.linkedin.com/in/hailey-petsch/" target="_blank" rel="noopener"><span>LinkedIn</span>linkedin.com/in/hailey-petsch</a></li>
+      <li><a href="https://YOUR-SUBSTACK.substack.com" target="_blank" rel="noopener"><span>Substack</span>Read the newsletter</a></li>
+      <li><a href="https://instagram.com/YOUR_HANDLE" target="_blank" rel="noopener"><span>Instagram</span>Follow along</a></li>
+      <li><a href="Hailey_Petsch-Sinclair_resume.pdf" download><span>Resume</span>Download PDF</a></li>
+    </ul>
   </div>
 </section>
 
-<footer>
-  <p>© 2026 Hailey Petsch-Sinclair &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/Hailey-petsch/" target="_blank">LinkedIn</a></p>
-</footer>
+<footer>© 2026 Hailey Petsch-Sinclair</footer>
 
-<script>
-  const viewport = document.querySelector('.carousel-viewport');
-  const track    = document.querySelector('.int-track');
-  function setCarouselSpeed() {
-    const halfWidth = track.scrollWidth / 2;
-    const pxPerSec  = window.innerWidth < 600 ? 55 : 80;
-    track.style.animationDuration = (halfWidth / pxPerSec).toFixed(1) + 's';
-  }
-  setCarouselSpeed();
-  window.addEventListener('resize', setCarouselSpeed);
-
-  let isDown = false, startX, scrollLeft;
-  viewport.addEventListener('mousedown', e => {
-    isDown = true; track.classList.add('dragging');
-    startX = e.pageX - viewport.offsetLeft;
-    scrollLeft = viewport.scrollLeft;
-  });
-  viewport.addEventListener('mouseleave', () => { isDown = false; track.classList.remove('dragging'); });
-  viewport.addEventListener('mouseup',    () => { isDown = false; track.classList.remove('dragging'); });
-  viewport.addEventListener('mousemove',  e => {
-    if (!isDown) return; e.preventDefault();
-    const x = e.pageX - viewport.offsetLeft;
-    viewport.scrollLeft = scrollLeft - (x - startX) * 1.5;
-  });
-
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
-    navLinks.forEach(a => { a.style.color = a.getAttribute('href') === '#' + current ? 'var(--accent)' : ''; });
-  });
-</script>
 </body>
 </html>
